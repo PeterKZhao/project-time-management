@@ -6,15 +6,15 @@
 
 ## 跟进列表
 
-| 项目 | PIC / User | 状态 | 跟进点 |
+| 项目 | PIC | 状态 | 跟进点 |
 |---|---|---|---|
-| Partial Withdrawal Processing | Kar Wai; Liau, Kian Ming; Leong, Jun Yee; Abd Rahim, Nurhana Nadia | Solution design | Autobot 已被业务接受，评估 AI 能否降低人工负担。 |
+| AML Agentic AI | Future Zhao, Runny Zheng, White Deng, George Wang | Development | 技术路径基本可行，重点是文档标准化。 |
+| Partial Withdrawal Processing | Susan Xia, Jade Fu | Solution design | Autobot 已被业务接受，评估 AI 能否降低人工负担。 |
 | Revise Benefit Amount | Gan, Huey Jing | Doing transaction | 当前只有 suppression scenario，依赖业务用户手工校验。 |
-| Non-Medical Claim | Sae Keat | Pending detail requirement | 需求细节待补充。 |
-| AML Agentic AI | Tan, Cheng See; Wong Sae Keat; Poo Shiah Feng | Environment preparation | 技术路径基本可行，重点是文档标准化。 |
-| FE Skill Building | Jacky & Tonny | Improve restriction | FE design 和 skill 初版。 |
-| SnapOne AI | Phooi Kah, AGB | Preliminary design | 细节待补充。 |
-| DMTM STU BO | PeterKZhao follow-up only | Follow-up only | 只需要跟进，不是主责交付。 |
+| Non-Medical Claim | Dennis | Pending detail requirement | 需求细节待补充。 |
+| FE Skill Building | Conor Zhou | Improve restriction | FE design 和 skill 初版。 |
+| SnapOne AI | George Wang | Preliminary design | 细节待补充。 |
+| DMTM STU BO | Conor Zhou | Follow-up only | 只需要跟进，不是主责交付。 |
 
 ## 跟进规则
 
