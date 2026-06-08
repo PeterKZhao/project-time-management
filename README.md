@@ -18,14 +18,13 @@ GitHub Projects V2 could not be created with the current token because it lacks 
 |---|---|---|
 | 新粮 ERP+CRM+供应链 | `active` | Ruoyi-Vue-Pro based ERP/CRM/supply-chain product line. Track product modeling, platform adaptation, deployment, and customer validation. |
 | AI 软件工厂 / youlidao.ai | `promotion` | Claude Code + IPD Skill direction. Track promotion, product packaging, workflow demos, and customer acquisition. |
-| 支付编排系统 | `analysis` | ERPNext-backed payment orchestration and business analysis. Track domain modeling, accounting flows, reconciliation, and integration scope. |
 | 美国华人相亲 / 相亲系统 | `planning` | Serious matchmaking platform direction. Track positioning, trust mechanism, profile model, review flow, AI matchmaker, and paid service loop. |
 | 同伴游 / 教练教师陪伴 + 券系统 | `planning` | Companion/teacher/coach travel and voucher service direction. Track business model, service SKU, trust, fulfillment, and payment loop. |
 | 高考志愿填报 | `live` | Live gaokao volunteer bot on yuanzhoulv.cloud. Track product quality, data sources, UI, disclaimer, operations, and promotion. |
 | 蓝鹦鹉在线教育 | `blocked` | Online education project currently blocked by iOS release and Apple Pay system testing. Track release blockers and payment compliance. |
 | Business-Unit-for-Video | `portfolio` | Video AI business unit. Track Video2Text, video-solution, Text-Image2Video, VideoConvt2English, and future pipeline architecture. |
 | Business-Unit-for-Stock | `portfolio` | Stock intelligence and quant analysis business unit. Track daily_stock_analysis, akshare, tushare, qlib, news intelligence, industry intelligence, and factor/backtest stack. |
-| MCN/KOL ERPNext 架构 | `architecture` | ERPNext-first MCN/KOL finance and contract architecture. Track model decisions, skill updates, and implementation stages. |
+| MCN/KOL ERPNext 架构（支付编排系统） | `architecture` | ERPNext-first MCN/KOL finance and contract architecture. Track model decisions, skill updates, and implementation stages. |
 
 ## Recommended Weekly Review
 
