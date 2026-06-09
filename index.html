@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PeterKZhao 重要紧急四象限</title>
-  <meta name="description" content="PeterKZhao 项目时间管理：重要紧急四象限网页看板" />
+  <title>PeterKZhao 重要 × 紧急坐标轴</title>
+  <meta name="description" content="PeterKZhao 项目时间管理：重要 × 紧急坐标轴四象限" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,21 +12,21 @@
     :root {
       --bg: #08090a;
       --panel: #0f1011;
-      --surface: rgba(255,255,255,0.035);
-      --surface-strong: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.08);
-      --border-soft: rgba(255,255,255,0.05);
+      --surface: rgba(255,255,255,.035);
+      --surface-strong: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.09);
+      --border-soft: rgba(255,255,255,.055);
       --text: #f7f8f8;
+      --silver: #d0d6e0;
       --muted: #8a8f98;
       --subtle: #62666d;
-      --silver: #d0d6e0;
       --accent: #7170ff;
-      --accent-2: #5e6ad2;
       --q1: #ff5c7a;
       --q2: #7170ff;
       --q3: #f5a524;
       --q4: #6b7280;
-      --ok: #10b981;
+      --side: #10b981;
+      --work: #38bdf8;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -36,211 +36,210 @@
       font-feature-settings: "cv01", "ss03";
       color: var(--text);
       background:
-        radial-gradient(circle at 18% 12%, rgba(113,112,255,.20), transparent 30%),
-        radial-gradient(circle at 82% 0%, rgba(255,92,122,.14), transparent 30%),
-        linear-gradient(180deg, #08090a 0%, #0b0c0e 48%, #08090a 100%);
+        radial-gradient(circle at 22% 8%, rgba(113,112,255,.22), transparent 28%),
+        radial-gradient(circle at 82% 4%, rgba(255,92,122,.13), transparent 30%),
+        linear-gradient(180deg, #08090a 0%, #0b0c0e 52%, #08090a 100%);
       min-height: 100vh;
     }
     a { color: inherit; text-decoration: none; }
-    .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--border-soft);
-      background: rgba(8,9,10,.78);
-      backdrop-filter: blur(18px);
-    }
-    .nav { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 510; letter-spacing: -0.2px; }
-    .mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--q1)); box-shadow: 0 0 28px rgba(113,112,255,.35); }
-    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .shell { width: min(1240px, calc(100% - 28px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border-soft); background: rgba(8,9,10,.78); backdrop-filter: blur(18px); }
+    .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 510; }
+    .mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--q1)); box-shadow: 0 0 28px rgba(113,112,255,.36); }
+    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .nav-links a { color: var(--silver); font-size: 13px; font-weight: 510; padding: 8px 10px; border: 1px solid transparent; border-radius: 999px; }
     .nav-links a:hover { border-color: var(--border); background: rgba(255,255,255,.035); color: var(--text); }
-    .hero { padding: 78px 0 36px; }
+    .hero { padding: 70px 0 28px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--silver); border: 1px solid var(--border); background: rgba(255,255,255,.025); padding: 7px 11px; border-radius: 999px; font-size: 13px; font-weight: 510; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 16px rgba(16,185,129,.7); }
-    h1 { margin: 22px 0 14px; max-width: 850px; font-size: clamp(42px, 7vw, 78px); line-height: .96; letter-spacing: -1.7px; font-weight: 510; }
-    .lead { max-width: 780px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); line-height: 1.7; margin: 0; }
-    .meta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--side); box-shadow: 0 0 16px rgba(16,185,129,.75); }
+    h1 { margin: 22px 0 14px; max-width: 920px; font-size: clamp(40px, 7vw, 78px); line-height: .96; letter-spacing: -1.6px; font-weight: 510; }
+    .lead { max-width: 790px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); line-height: 1.7; margin: 0; }
+    .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
     .pill { border: 1px solid var(--border); background: rgba(255,255,255,.025); color: var(--silver); padding: 8px 11px; border-radius: 999px; font-size: 13px; font-weight: 510; }
-    .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 34px 0; }
-    .stat { padding: 18px; border: 1px solid var(--border); background: var(--surface); border-radius: 18px; box-shadow: inset 0 0 24px rgba(255,255,255,.015); }
-    .stat strong { display: block; font-size: 30px; letter-spacing: -.7px; font-weight: 510; }
-    .stat span { color: var(--muted); font-size: 13px; }
-    section { padding: 28px 0; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
-    h2 { margin: 0; font-size: clamp(25px, 3vw, 34px); line-height: 1.05; letter-spacing: -.7px; font-weight: 510; }
-    .section-note { color: var(--muted); font-size: 14px; margin: 6px 0 0; }
-    .matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .quadrant { border: 1px solid var(--border); background: rgba(255,255,255,.027); border-radius: 22px; overflow: hidden; min-height: 310px; }
-    .q-head { padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border-soft); }
-    .q-title { display: flex; align-items: center; gap: 10px; font-weight: 590; letter-spacing: -.2px; }
-    .q-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .q-desc { color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; }
-    .items { padding: 10px; display: grid; gap: 10px; }
-    .card { border: 1px solid var(--border-soft); background: rgba(255,255,255,.03); border-radius: 16px; padding: 14px; }
-    .card:hover { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
-    .project { font-size: 15px; font-weight: 590; letter-spacing: -.15px; line-height: 1.35; }
-    .type { white-space: nowrap; color: var(--silver); font-size: 11px; font-weight: 510; padding: 4px 7px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.025); }
-    .reason, .next { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0; }
-    .next { color: var(--silver); margin-top: 7px; }
-    .label { color: var(--subtle); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
-    .q1 .q-dot { background: var(--q1); box-shadow: 0 0 18px rgba(255,92,122,.55); }
-    .q2 .q-dot { background: var(--q2); box-shadow: 0 0 18px rgba(113,112,255,.55); }
-    .q3 .q-dot { background: var(--q3); box-shadow: 0 0 18px rgba(245,165,36,.45); }
+    .pill.side::before, .pill.work::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
+    .pill.side::before { background: var(--side); }
+    .pill.work::before { background: var(--work); }
+
+    .axis-wrap { position: relative; padding: 38px 0 24px; }
+    .axis-label { position: absolute; color: var(--silver); font-size: 13px; font-weight: 510; letter-spacing: .02em; background: rgba(8,9,10,.9); border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px; z-index: 3; }
+    .axis-label.y-high { top: 0; left: 50%; transform: translateX(-50%); }
+    .axis-label.y-low { bottom: -12px; left: 50%; transform: translateX(-50%); color: var(--muted); }
+    .axis-label.x-low { left: 0; top: 50%; transform: translateY(-50%); color: var(--muted); }
+    .axis-label.x-high { right: 0; top: 50%; transform: translateY(-50%); }
+    .axis-title-y { position: absolute; left: -42px; top: 50%; transform: translateY(-50%) rotate(-90deg); color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .axis-title-x { text-align: center; color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; margin-top: 18px; }
+
+    .matrix {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(360px, auto));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      background: rgba(255,255,255,.018);
+      box-shadow: inset 0 0 45px rgba(255,255,255,.012), 0 24px 80px rgba(0,0,0,.28);
+    }
+    .matrix::before { content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: linear-gradient(transparent, rgba(255,255,255,.2), transparent); z-index: 2; }
+    .matrix::after { content: ''; position: absolute; left: 0; top: 50%; height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent); z-index: 2; }
+    .quadrant { padding: 20px; min-height: 360px; position: relative; }
+    .quadrant:nth-child(1), .quadrant:nth-child(2) { padding-top: 24px; }
+    .quadrant.q2 { background: radial-gradient(circle at 100% 0%, rgba(113,112,255,.16), transparent 48%); }
+    .quadrant.q1 { background: radial-gradient(circle at 0% 0%, rgba(255,92,122,.16), transparent 48%); }
+    .quadrant.q4 { background: radial-gradient(circle at 100% 100%, rgba(107,114,128,.13), transparent 45%); }
+    .quadrant.q3 { background: radial-gradient(circle at 0% 100%, rgba(245,165,36,.12), transparent 45%); }
+    .q-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .q-name { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 590; letter-spacing: -.25px; }
+    .q-dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; }
+    .q-meta { color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; text-align: right; }
+    .q1 .q-dot { background: var(--q1); box-shadow: 0 0 18px rgba(255,92,122,.6); }
+    .q2 .q-dot { background: var(--q2); box-shadow: 0 0 18px rgba(113,112,255,.62); }
+    .q3 .q-dot { background: var(--q3); box-shadow: 0 0 18px rgba(245,165,36,.5); }
     .q4 .q-dot { background: var(--q4); }
-    .advice { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+    .cards { display: grid; gap: 10px; }
+    .card { border: 1px solid var(--border-soft); background: rgba(255,255,255,.034); border-radius: 16px; padding: 13px; transition: .15s ease; }
+    .card:hover { background: rgba(255,255,255,.058); border-color: rgba(255,255,255,.14); transform: translateY(-1px); }
+    .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 7px; }
+    .project { font-size: 14px; font-weight: 590; letter-spacing: -.12px; line-height: 1.35; }
+    .tag { flex: 0 0 auto; font-size: 11px; border-radius: 999px; padding: 4px 7px; border: 1px solid var(--border); color: var(--silver); background: rgba(255,255,255,.025); }
+    .tag.side { color: #d1fae5; border-color: rgba(16,185,129,.24); background: rgba(16,185,129,.08); }
+    .tag.work { color: #e0f2fe; border-color: rgba(56,189,248,.24); background: rgba(56,189,248,.08); }
+    .reason { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
+    .next { margin: 7px 0 0; color: var(--silver); font-size: 12.5px; line-height: 1.55; }
+    .label { color: var(--subtle); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
+
+    .advice { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; margin: 36px 0 54px; }
     .panel { border: 1px solid var(--border); background: rgba(255,255,255,.03); border-radius: 22px; padding: 20px; }
-    .panel h3 { margin: 0 0 12px; font-size: 19px; letter-spacing: -.3px; font-weight: 590; }
+    .panel h2 { margin: 0 0 12px; font-size: 24px; letter-spacing: -.4px; font-weight: 590; }
     ol, ul { margin: 0; padding-left: 20px; color: var(--silver); line-height: 1.75; font-size: 14px; }
     li + li { margin-top: 8px; }
     code { font-family: 'JetBrains Mono', monospace; font-size: .92em; color: #eef0ff; background: rgba(113,112,255,.12); border: 1px solid rgba(113,112,255,.18); border-radius: 6px; padding: 1px 5px; }
-    footer { padding: 36px 0 54px; color: var(--subtle); font-size: 13px; }
-    @media (max-width: 860px) {
-      .nav { height: auto; padding: 14px 0; align-items: flex-start; flex-direction: column; }
-      .summary, .matrix, .advice { grid-template-columns: 1fr; }
-      .hero { padding-top: 44px; }
-      .section-head { align-items: flex-start; flex-direction: column; }
+    footer { padding: 10px 0 44px; color: var(--subtle); font-size: 13px; }
+
+    @media (max-width: 960px) {
+      .axis-label.x-low, .axis-label.x-high, .axis-title-y { display: none; }
+      .matrix { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .matrix::before, .matrix::after { display: none; }
+      .quadrant { min-height: auto; border-bottom: 1px solid var(--border-soft); }
+      .quadrant:last-child { border-bottom: 0; }
+      .advice { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 42px; }
+      .axis-label.y-high, .axis-label.y-low { position: static; display: inline-flex; transform: none; margin: 0 8px 10px 0; }
+      .axis-wrap { padding-top: 14px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="shell nav">
-      <a class="brand" href="#top"><span class="mark"></span><span>Project Time Matrix</span></a>
+      <a class="brand" href="#top"><span class="mark"></span><span>重要 × 紧急坐标轴</span></a>
       <nav class="nav-links" aria-label="页面导航">
-        <a href="#q1">Q1 紧急重要</a>
-        <a href="#q2">Q2 重要不紧急</a>
-        <a href="#work">本职工作</a>
+        <a href="#matrix">坐标轴</a>
         <a href="#advice">本周建议</a>
+        <a href="priority-matrix/README.md">Markdown</a>
+        <a href="https://github.com/PeterKZhao/project-time-management" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
   </header>
 
   <main id="top" class="shell">
     <section class="hero">
-      <div class="eyebrow"><span class="dot"></span>PeterKZhao 时间管理 · GitHub Pages</div>
-      <h1>重要紧急四象限</h1>
-      <p class="lead">用于每周判断先做什么。副业和本职工作仍然分开看：副业决定时间投入，本职工作只决定跟进顺序。</p>
-      <div class="meta-row">
-        <span class="pill">Q1：本周优先处理</span>
-        <span class="pill">Q2：持续推进</span>
-        <span class="pill">Q3：快速跟进</span>
-        <span class="pill">Q4：暂缓观察</span>
+      <div class="eyebrow"><span class="dot"></span>坐标轴视图 · X=紧急程度 / Y=重要程度</div>
+      <h1>重要 × 紧急四象限</h1>
+      <p class="lead">越往上越重要，越往右越紧急。副业项目决定每周时间投入；本职工作只决定跟进顺序，不混入副业优先级。</p>
+      <div class="legend">
+        <span class="pill side">副业 / 创业项目</span>
+        <span class="pill work">本职工作 / 主业跟进</span>
+        <span class="pill">右上：本周优先</span>
+        <span class="pill">左上：持续推进</span>
       </div>
     </section>
 
-    <div class="summary" aria-label="项目数量概览">
-      <div class="stat"><strong>5</strong><span>Q1 重要且紧急</span></div>
-      <div class="stat"><strong>9</strong><span>Q2 重要不紧急</span></div>
-      <div class="stat"><strong>1</strong><span>Q3 紧急不重要</span></div>
-      <div class="stat"><strong>1</strong><span>Q4 暂缓观察</span></div>
-    </div>
+    <section id="matrix" class="axis-wrap" aria-label="重要紧急坐标轴">
+      <div class="axis-label y-high">重要 ↑</div>
+      <div class="axis-label y-low">不重要 ↓</div>
+      <div class="axis-label x-low">← 不紧急</div>
+      <div class="axis-label x-high">紧急 →</div>
+      <div class="axis-title-y">Importance</div>
 
-    <section id="side-business">
-      <div class="section-head">
-        <div>
-          <h2>副业 / 创业项目</h2>
-          <p class="section-note">决定每周时间投入，Q1 优先，Q2 固定节奏推进。</p>
-        </div>
-      </div>
       <div class="matrix">
-        <article id="q1" class="quadrant q1">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q1 重要且紧急</div><div class="q-desc">handle this week</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">高考志愿填报</div><span class="type">副业</span></div><p class="reason">已上线且处于推广阶段，窗口期明显。</p><p class="next"><span class="label">Next</span> 优先优化转化入口、免责声明和推广动作。</p></div>
-            <div class="card"><div class="card-top"><div class="project">支付编排系统</div><span class="type">副业</span></div><p class="reason">已进入业务落地，和 ERPNext/财务闭环相关。</p><p class="next"><span class="label">Next</span> 固化业务流程，形成可交付方案或原型。</p></div>
-            <div class="card"><div class="card-top"><div class="project">蓝鹦鹉在线教育</div><span class="type">副业</span></div><p class="reason">iOS 发布和 Apple Pay 系统测试阻塞会直接影响产品上线/验证。</p><p class="next"><span class="label">Next</span> 本周优先推动阻塞解除，明确 Apple Pay 测试和发布动作。</p></div>
+        <!-- Top-left: important, not urgent -->
+        <article class="quadrant q2" aria-label="Q2 重要不紧急">
+          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q2 重要不紧急</div><div class="q-meta">重要高 · 紧急低<br/>schedule progress</div></div>
+          <div class="cards">
+            <div class="card"><div class="top"><div class="project">AI 软件工厂 / youlidao.ai</div><span class="tag side">副业</span></div><p class="reason">战略价值高，关系到长期获客和产品化，但当前不是最紧急事项。</p><p class="next"><span class="label">Next</span> 持续打磨可演示/可成交的包装版本。</p></div>
+            <div class="card"><div class="top"><div class="project">量化交易</div><span class="tag side">副业</span></div><p class="reason">长期战略和能力积累价值高，但当前没有立即截止点。</p><p class="next"><span class="label">Next</span> 持续整理量化、资讯和回测工具链，控制投入节奏。</p></div>
+            <div class="card"><div class="top"><div class="project">新粮 ERP+CRM+供应链</div><span class="tag side">副业</span></div><p class="reason">等待签合同，价值高但当前依赖外部确认。</p><p class="next"><span class="label">Next</span> 跟进签约节点，准备签约后启动清单。</p></div>
+            <div class="card"><div class="top"><div class="project">美国华人相亲 / 相亲系统</div><span class="tag side">副业</span></div><p class="reason">有长期产品潜力，但仍在规划。</p><p class="next"><span class="label">Next</span> 完成 MVP 范围和用户信任机制。</p></div>
+            <div class="card"><div class="top"><div class="project">同伴游 / 教练教师陪伴 + 券系统</div><span class="tag side">副业</span></div><p class="reason">长期可做，但当前还在模式设计。</p><p class="next"><span class="label">Next</span> 梳理服务 SKU、履约和支付闭环。</p></div>
+            <div class="card"><div class="top"><div class="project">Partial Withdrawal Processing</div><span class="tag work">本职</span></div><p class="reason">处于 Solution design，业务已接受 Autobot，但当前不紧急。</p><p class="next"><span class="label">Next</span> 按节奏推进 AI 降低人工负担的可行性判断。</p></div>
+            <div class="card"><div class="top"><div class="project">Non-Medical Claim</div><span class="tag work">本职</span></div><p class="reason">需求细节未补齐，当前不紧急。</p><p class="next"><span class="label">Next</span> 等细节明确后再安排下一步。</p></div>
+            <div class="card"><div class="top"><div class="project">FE Skill Building</div><span class="tag work">本职</span></div><p class="reason">能提升团队能力，但不是即时交付。</p><p class="next"><span class="label">Next</span> 跟进 FE design / skill 初版的限制改进。</p></div>
+            <div class="card"><div class="top"><div class="project">SnapOne AI</div><span class="tag work">本职</span></div><p class="reason">Preliminary design，仍处早期设计。</p><p class="next"><span class="label">Next</span> 等细节补齐后再推进下一步。</p></div>
           </div>
         </article>
 
-        <article id="q2" class="quadrant q2">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q2 重要不紧急</div><div class="q-desc">schedule progress</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">AI 软件工厂 / youlidao.ai</div><span class="type">副业</span></div><p class="reason">战略价值高，关系到长期获客和产品化，但当前不是最紧急事项。</p><p class="next"><span class="label">Next</span> 持续打磨可演示/可成交的包装版本。</p></div>
-            <div class="card"><div class="card-top"><div class="project">新粮 ERP+CRM+供应链</div><span class="type">副业</span></div><p class="reason">等待签合同，价值高但当前依赖外部确认。</p><p class="next"><span class="label">Next</span> 跟进签约节点，准备签约后启动清单。</p></div>
-            <div class="card"><div class="card-top"><div class="project">美国华人相亲 / 相亲系统</div><span class="type">副业</span></div><p class="reason">有长期产品潜力，但仍在规划。</p><p class="next"><span class="label">Next</span> 先完成 MVP 范围和用户信任机制。</p></div>
-            <div class="card"><div class="card-top"><div class="project">同伴游 / 教练教师陪伴 + 券系统</div><span class="type">副业</span></div><p class="reason">长期可做，但当前还在模式设计。</p><p class="next"><span class="label">Next</span> 梳理服务 SKU、履约和支付闭环。</p></div>
-            <div class="card"><div class="card-top"><div class="project">量化交易</div><span class="type">副业</span></div><p class="reason">长期战略和能力积累价值高，但当前没有立即截止点。</p><p class="next"><span class="label">Next</span> 持续整理量化、资讯和回测工具链，控制投入节奏。</p></div>
+        <!-- Top-right: important, urgent -->
+        <article class="quadrant q1" aria-label="Q1 重要且紧急">
+          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q1 重要且紧急</div><div class="q-meta">重要高 · 紧急高<br/>handle this week</div></div>
+          <div class="cards">
+            <div class="card"><div class="top"><div class="project">蓝鹦鹉在线教育</div><span class="tag side">副业</span></div><p class="reason">iOS 发布和 Apple Pay 系统测试阻塞会直接影响产品上线/验证。</p><p class="next"><span class="label">Next</span> 本周优先推动阻塞解除，明确 Apple Pay 测试和发布动作。</p></div>
+            <div class="card"><div class="top"><div class="project">高考志愿填报</div><span class="tag side">副业</span></div><p class="reason">已上线且处于推广阶段，窗口期明显。</p><p class="next"><span class="label">Next</span> 优先优化转化入口、免责声明和推广动作。</p></div>
+            <div class="card"><div class="top"><div class="project">支付编排系统</div><span class="tag side">副业</span></div><p class="reason">已进入业务落地，和 ERPNext/财务闭环相关。</p><p class="next"><span class="label">Next</span> 固化业务流程，形成可交付方案或原型。</p></div>
+            <div class="card"><div class="top"><div class="project">AML Agentic AI</div><span class="tag work">本职</span></div><p class="reason">已在 Development，技术路径和文档标准化会影响交付。</p><p class="next"><span class="label">Next</span> 跟进开发进度和文档标准。</p></div>
+            <div class="card"><div class="top"><div class="project">Revise Benefit Amount</div><span class="tag work">本职</span></div><p class="reason">Doing transaction，存在当前处理动作。</p><p class="next"><span class="label">Next</span> 跟进 suppression scenario 和业务校验。</p></div>
+          </div>
+        </article>
+
+        <!-- Bottom-left: not important, not urgent -->
+        <article class="quadrant q4" aria-label="Q4 不重要不紧急">
+          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q4 不重要不紧急</div><div class="q-meta">重要低 · 紧急低<br/>defer / observe</div></div>
+          <div class="cards">
+            <div class="card"><div class="top"><div class="project">视频生成</div><span class="tag side">副业</span></div><p class="reason">当前是组合整理，暂无近期交付压力。</p><p class="next"><span class="label">Next</span> 暂缓，等业务单元定位更清楚再推进。</p></div>
+          </div>
+        </article>
+
+        <!-- Bottom-right: urgent, not important -->
+        <article class="quadrant q3" aria-label="Q3 紧急不重要">
+          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q3 紧急不重要</div><div class="q-meta">重要低 · 紧急高<br/>quick follow-up</div></div>
+          <div class="cards">
+            <div class="card"><div class="top"><div class="project">DMTM STU BO</div><span class="tag work">本职</span></div><p class="reason">Follow-up only，不是主责交付。</p><p class="next"><span class="label">Next</span> 只做状态跟进，不投入深度执行。</p></div>
           </div>
         </article>
       </div>
+      <div class="axis-title-x">Urgency</div>
     </section>
 
-    <section id="work">
-      <div class="section-head">
-        <div>
-          <h2>本职工作 / 主业跟进</h2>
-          <p class="section-note">只决定跟进顺序，不参与副业优先级排序。</p>
-        </div>
+    <section id="advice" class="advice">
+      <div class="panel">
+        <h2>本周建议</h2>
+        <ol>
+          <li>右上角 Q1 先处理：<code>蓝鹦鹉在线教育</code>、<code>高考志愿填报</code>、<code>支付编排系统</code>。</li>
+          <li>左上角 Q2 不是不做，而是固定时间持续推进：<code>AI 软件工厂 / youlidao.ai</code>、<code>量化交易</code>。</li>
+          <li><code>新粮</code> 只跟签约节点，不提前重投入。</li>
+          <li>本职工作只看跟进顺序：先看 <code>AML Agentic AI</code> 和 <code>Revise Benefit Amount</code>。</li>
+          <li><code>Partial Withdrawal Processing</code>、<code>Non-Medical Claim</code> 不按紧急项处理。</li>
+        </ol>
       </div>
-      <div class="matrix">
-        <article class="quadrant q1">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q1 重要且紧急</div><div class="q-desc">work follow-up</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">AML Agentic AI</div><span class="type">本职</span></div><p class="reason">已在 Development，技术路径和文档标准化会影响交付。</p><p class="next"><span class="label">Next</span> 跟进开发进度和文档标准。</p></div>
-            <div class="card"><div class="card-top"><div class="project">Revise Benefit Amount</div><span class="type">本职</span></div><p class="reason">Doing transaction，存在当前处理动作。</p><p class="next"><span class="label">Next</span> 跟进 suppression scenario 和业务校验。</p></div>
-          </div>
-        </article>
-        <article class="quadrant q2">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q2 重要不紧急</div><div class="q-desc">not urgent</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">Partial Withdrawal Processing</div><span class="type">本职</span></div><p class="reason">处于 Solution design，业务已接受 Autobot，但当前不紧急。</p><p class="next"><span class="label">Next</span> 按节奏推进 AI 降低人工负担的可行性判断。</p></div>
-            <div class="card"><div class="card-top"><div class="project">Non-Medical Claim</div><span class="type">本职</span></div><p class="reason">需求细节未补齐，当前不紧急。</p><p class="next"><span class="label">Next</span> 等细节明确后再安排下一步。</p></div>
-            <div class="card"><div class="card-top"><div class="project">FE Skill Building</div><span class="type">本职</span></div><p class="reason">能提升团队能力，但不是即时交付。</p><p class="next"><span class="label">Next</span> 跟进 FE design / skill 初版的限制改进。</p></div>
-            <div class="card"><div class="card-top"><div class="project">SnapOne AI</div><span class="type">本职</span></div><p class="reason">Preliminary design，仍处早期设计。</p><p class="next"><span class="label">Next</span> 等细节补齐后再推进下一步。</p></div>
-          </div>
-        </article>
-        <article class="quadrant q3">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q3 紧急不重要</div><div class="q-desc">quick follow-up</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">DMTM STU BO</div><span class="type">本职</span></div><p class="reason">Follow-up only，不是主责交付。</p><p class="next"><span class="label">Next</span> 只做状态跟进，不投入深度执行。</p></div>
-          </div>
-        </article>
-        <article class="quadrant q4">
-          <div class="q-head"><div class="q-title"><span class="q-dot"></span>Q4 不重要不紧急</div><div class="q-desc">defer / observe</div></div>
-          <div class="items">
-            <div class="card"><div class="card-top"><div class="project">视频生成</div><span class="type">副业</span></div><p class="reason">当前是组合整理，暂无近期交付压力。</p><p class="next"><span class="label">Next</span> 暂缓，等业务单元定位更清楚再推进。</p></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="advice">
-      <div class="section-head">
-        <div>
-          <h2>本周建议</h2>
-          <p class="section-note">先处理 Q1，再给 Q2 留固定推进时间。</p>
-        </div>
-      </div>
-      <div class="advice">
-        <div class="panel">
-          <h3>执行顺序</h3>
-          <ol>
-            <li>副业主攻：优先看 <code>蓝鹦鹉在线教育</code>、<code>高考志愿填报</code>、<code>支付编排系统</code>。</li>
-            <li>副业持续推进：<code>AI 软件工厂 / youlidao.ai</code> 和 <code>量化交易</code> 放在 Q2，安排固定时间推进，但不要抢 Q1 时间。</li>
-            <li>副业等待：<code>新粮</code> 只跟签约，不提前重投入。</li>
-            <li>本职工作：先看 <code>AML Agentic AI</code> 和 <code>Revise Benefit Amount</code>。</li>
-            <li><code>Partial Withdrawal Processing</code>、<code>Non-Medical Claim</code> 不按紧急项处理。</li>
-          </ol>
-        </div>
-        <div class="panel">
-          <h3>判断标准</h3>
-          <ul>
-            <li><strong>Q1</strong>：近期影响收入、上线、合同或关键交付。</li>
-            <li><strong>Q2</strong>：长期价值高，但没有立即截止点。</li>
-            <li><strong>Q3</strong>：需要跟进或响应，但不是主线价值。</li>
-            <li><strong>Q4</strong>：暂无明确收入、交付或战略窗口。</li>
-          </ul>
-        </div>
+      <div class="panel">
+        <h2>读图方式</h2>
+        <ul>
+          <li><strong>越往上</strong>：越重要，长期价值或关键影响越高。</li>
+          <li><strong>越往右</strong>：越紧急，本周越需要动作。</li>
+          <li><strong>右上</strong>：本周优先。</li>
+          <li><strong>左上</strong>：安排固定时间，防止拖成右上。</li>
+          <li><strong>下方</strong>：少投入，只跟进或观察。</li>
+        </ul>
       </div>
     </section>
   </main>
 
   <footer class="shell">
-    <div>Source: <a href="https://github.com/PeterKZhao/project-time-management" target="_blank" rel="noreferrer">PeterKZhao/project-time-management</a> · Generated from <code>priority-matrix/README.md</code></div>
+    Source: <a href="https://github.com/PeterKZhao/project-time-management" target="_blank" rel="noreferrer">PeterKZhao/project-time-management</a> · Coordinate-axis view generated from <code>priority-matrix/README.md</code>
   </footer>
 </body>
 </html>
