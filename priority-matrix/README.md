@@ -20,6 +20,7 @@
 | Q1 重要且紧急 | AML Agentic AI | 技术路径基本可行，当前卡在权限配置。 | 等权限配置完成后继续推进开发和交付。 |
 | Q1 重要且紧急 | Revise Benefit Amount | Doing transaction，存在当前处理动作。 | 跟进 suppression scenario 和业务校验。 |
 | Q1 重要且紧急 | FE Skill Building | 需要尽快扫描所有代码，形成前端能力/规范改进依据。 | 尽快完成全量代码扫描，输出问题清单和改进范围。 |
+| Q1 重要且紧急 | ADF | IaaS 到 PaaS 的数据同步需要通过 pipeline 完成，当前卡在 ADF 开发账号申请。 | 推动 ADF 开发账号/权限申请，拿到账号后梳理 pipeline 同步方案。 |
 | Q1 重要且紧急 | SnapOne AI | 已进入前端界面开发阶段，需要尽快形成可交互页面。 | 开发前端界面，先跑通核心页面和流程。 |
 | Q2 重要不紧急 | Partial Withdrawal Processing | 处于 Solution design，业务已接受 Autobot，但当前不紧急。 | 按节奏推进 AI 降低人工负担的可行性判断。 |
 | Q2 重要不紧急 | Non-Medical Claim | 需求细节未补齐，当前不紧急。 | 等细节明确后再安排下一步。 |
@@ -42,9 +43,9 @@
 
 ## 本周建议
 
-1. Q1 同象限先看主业：`AML Agentic AI`、`Revise Benefit Amount`、`FE Skill Building`、`SnapOne AI`；副业看 `高考志愿填报`、`蓝鹦鹉在线教育`、`支付编排 / MCN/KOL ERPNext 架构`。
+1. Q1 同象限先看主业：`AML Agentic AI`、`Revise Benefit Amount`、`FE Skill Building`、`ADF`、`SnapOne AI`；副业看 `高考志愿填报`、`蓝鹦鹉在线教育`、`支付编排 / MCN/KOL ERPNext 架构`。
 2. `高考志愿填报` 6.25 前保持 Q1：落地页已更新部署，铜川李杰和西安赵一多正在推广，付海虎负责家长对接；6.15-6.18 公司活动期间只做咨询兜底和阻断性修复。
 3. `蓝鹦鹉在线教育` 先让 Codex 做自动化测试，定位 iOS 发布和 Apple Pay 系统测试阻塞点。
 4. 副业等待：`新粮` 只跟签约，不提前重投入；`AI 中转站做视频生成` 先整理产品入口、调用链路和演示场景。
-5. 本职工作：`AML Agentic AI` 等权限配置；`FE Skill Building` 尽快扫描所有代码；`SnapOne AI` 进入前端界面开发。
+5. 本职工作：`AML Agentic AI` 等权限配置；`FE Skill Building` 尽快扫描所有代码；`ADF` 推动开发账号/权限申请；`SnapOne AI` 进入前端界面开发。
 6. Q4 项目不要本周主动展开，避免稀释注意力。

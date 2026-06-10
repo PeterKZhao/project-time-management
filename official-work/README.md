@@ -13,6 +13,7 @@
 | Revise Benefit Amount | Gan, Huey Jing | Doing transaction | 当前只有 suppression scenario，依赖业务用户手工校验。 |
 | Non-Medical Claim | Dennis | Pending detail requirement | 需求细节待补充。 |
 | FE Skill Building | Conor Zhou | 尽快扫描所有代码 | 尽快完成代码库扫描，形成 FE skill / design 的问题清单和改进范围。 |
+| ADF | TBD | 申请不到 ADF 开发账号 | 用于 IaaS 到 PaaS 的数据同步，通过 pipeline 完成；当前阻塞是申请不到 ADF 开发账号。 |
 | SnapOne AI | George Wang | 开发前端界面 | 进入前端界面开发，先完成可交互页面和核心流程。 |
 | DMTM STU BO | Conor Zhou | Follow-up only | 只需要跟进，不是主责交付。 |
 
