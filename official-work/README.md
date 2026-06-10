@@ -8,12 +8,12 @@
 
 | 项目 | PIC | 状态 | 跟进点 |
 |---|---|---|---|
-| AML Agentic AI | Future Zhao, Runny Zheng, White Deng, George Wang | Development | 技术路径基本可行，重点是文档标准化。 |
+| AML Agentic AI | Future Zhao, Runny Zheng, White Deng, George Wang | 等权限配置 | 技术路径基本可行，当前等待权限配置完成后继续推进。 |
 | Partial Withdrawal Processing | Susan Xia, Jade Fu | Solution design | Autobot 已被业务接受，评估 AI 能否降低人工负担。 |
 | Revise Benefit Amount | Gan, Huey Jing | Doing transaction | 当前只有 suppression scenario，依赖业务用户手工校验。 |
 | Non-Medical Claim | Dennis | Pending detail requirement | 需求细节待补充。 |
-| FE Skill Building | Conor Zhou | Improve restriction | FE design 和 skill 初版。 |
-| SnapOne AI | George Wang | Preliminary design | 细节待补充。 |
+| FE Skill Building | Conor Zhou | 尽快扫描所有代码 | 尽快完成代码库扫描，形成 FE skill / design 的问题清单和改进范围。 |
+| SnapOne AI | George Wang | 开发前端界面 | 进入前端界面开发，先完成可交互页面和核心流程。 |
 | DMTM STU BO | Conor Zhou | Follow-up only | 只需要跟进，不是主责交付。 |
 
 ## 跟进规则
