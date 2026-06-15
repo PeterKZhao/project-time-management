@@ -9,7 +9,7 @@
 | 新粮 ERP+CRM+供应链 | 等待签合同 | Ruoyi-Vue-Pro 方向，ERP/CRM/供应链产品线。 |
 | AI 软件工厂 / youlidao.ai | 推广中 | Claude Code + IPD Skill，重点是包装、演示和获客。 |
 | 支付编排 / MCN/KOL ERPNext 架构 | 业务架构 | ERPNext-first 的合同、付款、对账、报税与财务流程建模；支付编排并入同一条主线。 |
-| 高考志愿填报 | Q1 推广转化 | 陕西省志愿填报业务，主售西安/铜川；三档产品为 19.9 小程序报告、6999 家长面对面咨询（主推）、19999 高端深度咨询；铜川李杰、西安赵一多推广，付海虎家长联络。详见 [业务总结](gaokao-volunteer/summary.md) 与 [任务清单](gaokao-volunteer/tasks.md)。 |
+| 高考志愿填报 | Q1 推广转化 | 陕西省志愿填报业务处于 6.25 前关键窗口；专项业务运营和任务清单迁移到 `Business-Unit-for-Gaokao/gaokao`，本仓库只保留总时间管理视角。详见 [时间管理指针](gaokao-volunteer/summary.md)。 |
 | 美国华人相亲 / 相亲系统 | 规划中 | 严肃相亲、AI 红娘、人工审核、付费服务闭环。 |
 | 同伴游 / 教练教师陪伴 + 券系统 | 规划中 | 服务 SKU、信任机制、履约和支付闭环。 |
 | 蓝鹦鹉在线教育 | 阻塞 | iOS 发布和 Apple Pay 系统测试阻塞；下一步让 Codex 做自动化测试。 |
