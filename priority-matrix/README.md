@@ -22,6 +22,7 @@
 | Q1 重要且紧急 | FE Skill Building | 需要尽快扫描所有代码，形成前端能力/规范改进依据。 | 尽快完成全量代码扫描，输出问题清单和改进范围。 |
 | Q1 重要且紧急 | ADF | IaaS 到 PaaS 的数据同步需要通过 pipeline 完成，当前卡在 ADF 开发账号申请。 | 推动 ADF 开发账号/权限申请，拿到账号后梳理 pipeline 同步方案。 |
 | Q1 重要且紧急 | SnapOne AI | 已进入前端界面开发阶段，需要尽快形成可交互页面。 | 开发前端界面，先跑通核心页面和流程。 |
+| Q1 重要且紧急 | SnapOne UI 设计 | UI 设计会影响 SnapOne AI 前端交付质量和评审节奏，需要单独跟进。 | 梳理 UI 设计稿、关键页面、交互细节和评审反馈。 |
 | Q2 重要不紧急 | Partial Withdrawal Processing | 处于 Solution design，业务已接受 Autobot，但当前不紧急。 | 按节奏推进 AI 降低人工负担的可行性判断。 |
 | Q2 重要不紧急 | Non-Medical Claim | 需求细节未补齐，当前不紧急。 | 等细节明确后再安排下一步。 |
 | Q3 紧急不重要 | DMTM STU BO | Follow-up only，不是主责交付。 | 只做状态跟进，不投入深度执行。 |
@@ -44,9 +45,10 @@
 
 ## 本周建议
 
-1. Q1 同象限先看主业：`AML Agentic AI`、`Revise Benefit Amount`、`FE Skill Building`、`ADF`、`SnapOne AI`；副业看 `高考志愿填报`、`AI 债务健康检查管理系统`、`蓝鹦鹉在线教育`、`支付编排 / MCN/KOL ERPNext 架构`。
+1. Q1 同象限先看主业：`AML Agentic AI`、`Revise Benefit Amount`、`FE Skill Building`、`ADF`、`SnapOne AI`、`SnapOne UI 设计`；副业看 `高考志愿填报`、`AI 债务健康检查管理系统`、`蓝鹦鹉在线教育`、`支付编排 / MCN/KOL ERPNext 架构`。
 2. `高考志愿填报` 6.25 前保持 Q1：时间管理只跟踪是否投入和关键摘要；新增动作是联络西安的外地招生办，争取院校招生咨询/场地合作窗口；详细业务运营、任务表和负责人进入 `Business-Unit-for-Gaokao/gaokao` 的专项文档。
 3. `蓝鹦鹉在线教育` 先让 Codex 做自动化测试，定位 iOS 发布和 Apple Pay 系统测试阻塞点。
 4. 副业等待：`新粮` 只跟签约，不提前重投入；`AI 中转站做视频生成` 先整理产品入口、调用链路和演示场景。
-5. 本职工作：`AML Agentic AI` 等权限配置；`FE Skill Building` 尽快扫描所有代码；`ADF` 推动开发账号/权限申请；`SnapOne AI` 进入前端界面开发。
+5. 本职工作：`AML Agentic AI` 等权限配置；`FE Skill Building` 尽快扫描所有代码；`ADF` 推动开发账号/权限申请；`SnapOne AI` 进入前端界面开发；`SnapOne UI 设计` 单独跟进设计稿和评审反馈。
 6. Q4 项目不要本周主动展开，避免稀释注意力。
+
