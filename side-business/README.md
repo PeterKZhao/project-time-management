@@ -6,10 +6,10 @@
 
 | 项目 | 阶段 | 当前责任人 | 备注 |
 |---|---|---|---|
-| 新粮 ERP+CRM+供应链 | 等待签合同 | 赵杨 | Ruoyi-Vue-Pro 方向，ERP/CRM/供应链产品线。 |
-| AI 软件工厂 / youlidao.ai | 推广中 | 赵凯、赵杨 | Claude Code + IPD Skill，重点是包装、演示和获客。 |
+| 新粮 ERP+CRM+供应链 | 等待签合同 | 赵杨 | Ruoyi-Vue-Pro 框架，ERP/CRM/供应链金融。 |
+| AI 软件工厂 / youlidao.ai | 推广中 | 王绵杰、赵凯、赵杨 | Claude Code + IPD Skill，重点是包装、演示和获客。 |
 | 支付编排 / MCN/KOL ERPNext 架构 | 测试 | 赵杨 | ERPNext-first 的合同、付款、对账、报税与财务流程建模；支付编排并入同一条主线。 |
-| 高考志愿填报 | Q1 推广转化 | 赵凯 | 陕西省志愿填报业务处于 6.25 前关键窗口；专项业务运营和任务清单迁移到 `Business-Unit-for-Gaokao/gaokao`，本仓库只保留总时间管理视角。详见 [时间管理指针](gaokao-volunteer/summary.md)。 |
+| 高考志愿填报 | Q1 推广转化 | 赵凯 | Ruoyi-Vue-Pro 框架，详见 [时间管理指针](gaokao-volunteer/summary.md)。 |
 | AI 债务健康检查管理系统 | P0 前端闭环 | 赵凯、赵杨 | 民企专项化债/政企欠款回收评估前台，先做客户提交、材料上传、AI 初筛和我的项目。详见 [前端规划](debt-health-check/frontend-plan.md)。 |
 | 美国华人相亲 / 相亲系统 | 规划中 | 赵凯、赵杨 | 严肃相亲、AI 红娘、人工审核、付费服务闭环。 |
 | 同伴游 / 教练教师陪伴 + 券系统 | 规划中 | 赵凯、赵杨 | 服务 SKU、信任机制、履约和支付闭环。 |
