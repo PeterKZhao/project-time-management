@@ -121,6 +121,341 @@ asset_usage_record
 6. 合并后由独立 deploy 仓库负责部署
 ```
 
+## Clone-ruoyi-vue-pro-Bot 待解决问题
+
+以下问题专门针对 [`FutureTechQuant/Clone-ruoyi-vue-pro-Bot`](https://github.com/FutureTechQuant/Clone-ruoyi-vue-pro-Bot)。当前它生成的 Java/Maven 目录方向基本合理，但还没有达到长期平台底座生成器标准。
+
+### 1. 目标 Organization 硬编码
+
+当前 workflow 中存在类似：
+
+```text
+ORG=FutureTechQuant
+```
+
+问题：
+
+- 不符合 `Business-Unit-for-*` 的业务组织原则。
+- 不能直接复用到高考、Debet、新粮、相亲、同伴游等不同业务 Organization。
+- 容易把平台底座、业务实例和实验仓库都混在 `FutureTechQuant`。
+
+建议：
+
+```text
+target_org
+repo_name
+repo_description
+private
+```
+
+都应作为 workflow input 或配置项。
+
+### 2. 默认删除已有目标仓库，风险高
+
+当前生成流程里有删除已存在目标仓库的逻辑。
+
+问题：
+
+- 一旦 repo 名填错，可能删除已有资产。
+- 不适合长期生产仓库。
+- 不符合“生成代码走 PR、可回滚、可审查”的原则。
+
+建议：
+
+- 默认不删除已有仓库。
+- 已存在时 fail fast，并提示用户确认。
+- 如确实需要重建，只允许显式传入：
+
+```text
+delete_existing=true
+```
+
+并在日志和文档中明确这是破坏性操作。
+
+### 3. 生成仓库缺少项目事实源
+
+当前生成出的 `future-vue-pro` 缺少或不完整：
+
+```text
+AGENTS.md
+docs/
+.github/ISSUE_TEMPLATE/
+.github/pull_request_template.md
+docs/architecture/generated-from.md
+generated/manifest.json
+generated/transform-report.md
+```
+
+问题：
+
+- Agent 进入仓库后缺少操作规则。
+- 人类和 Agent 不知道项目从哪里生成、用过哪些 transform、源 commit 是什么。
+- 后续无法可靠判断哪些文件是上游继承、哪些是本地改造、哪些是业务定制。
+
+建议：
+
+- clone-bot 默认生成 `AGENTS.md`、`docs/`、Issue/PR 模板。
+- 生成完整 manifest 和 transform report。
+- 至少记录 source repo/branch/commit、generator repo/commit、target repo、生成时间、移动目录映射、脚本列表、构建结果。
+
+### 4. README 仍偏上游宣传文案，没有业务化
+
+当前生成仓库 README 仍保留大量上游 Yudao/RuoYi 风格内容，例如演示地址、上游项目关系、外包宣传等。
+
+问题：
+
+- 不能准确说明 Future 平台底座的定位。
+- 不能说明本仓库是平台底座还是业务实例。
+- 不利于业务方、Agent、后续开发者理解仓库用途。
+
+建议 README 改为说明：
+
+- 本仓库是什么。
+- 从哪里生成。
+- 使用哪个 source commit 和 generator commit。
+- 当前结构说明。
+- 如何本地开发。
+- 如何构建和测试。
+- 如何生成业务模块。
+- 部署归哪个 deploy 仓库负责。
+
+### 5. 应用仓库混入部署逻辑
+
+当前生成出的应用仓库 workflow 中存在 build + deploy 混合逻辑，包含 SSH、SCP、Cloudflare Tunnel、Docker Compose 等部署动作。
+
+问题：
+
+- 应用代码仓库职责过重。
+- 不符合应用仓库只负责 build/test/package/artifact 的边界。
+- 生产部署配置容易分散在多个应用仓库。
+- 后续多业务、多环境部署会难维护。
+
+建议：
+
+- 应用仓库只保留 CI/build/test/package。
+- 部署迁移到独立 deploy 仓库。
+- deploy 仓库负责环境配置、部署编排、健康检查、回滚。
+
+### 6. workflow 使用第三方 SSH/SCP action
+
+当前生成出的 workflow 存在类似：
+
+```text
+appleboy/ssh-action
+appleboy/scp-action
+```
+
+问题：
+
+- 不符合当前部署偏好：避免带默认超时和隐藏行为的第三方 SSH action。
+- 排障和安全边界不如原生 `ssh/scp` 清晰。
+
+建议：
+
+- 如果确实需要 SSH，使用原生 `ssh/scp` 命令。
+- 更推荐把部署动作移出应用仓库，交给 deploy 仓库。
+
+### 7. workflow 存在人为 timeout
+
+当前 workflow 存在类似：
+
+```text
+timeout-minutes: 30
+```
+
+问题：
+
+- 对大型 Java 项目构建、首次 Maven 下载、生成和推送流程不友好。
+- 不符合避免人为超时限制的偏好。
+
+建议：
+
+- 移除硬编码 timeout。
+- 用明确失败条件、健康检查和日志排障替代固定超时。
+
+### 8. 生成 manifest 太弱
+
+当前生成仓库中的 `generated-manifest.json` 内容较少，例如只记录：
+
+```json
+{
+  "frontend_dirs": ["src/api/asset", "src/views/asset"],
+  "backend_modules": ["future-module-asset"]
+}
+```
+
+问题：
+
+- 无法完整追踪生成来源。
+- 无法支持审计、回滚、重放生成。
+- 无法让 Agent 判断生成代码与源 SQL、源 commit、transform 脚本之间的关系。
+
+建议 manifest 至少记录：
+
+```text
+source repo / branch / commit
+generator repo / commit
+target org/repo/branch
+generated timestamp
+transform scripts and versions
+module move map
+frontend dirs
+backend modules
+split api/biz report
+build result
+manual review checklist
+```
+
+### 9. api/biz 拆分策略需要显式化
+
+当前 `split_api_biz.py` 会按启发式规则拆分模块：
+
+```text
+future-module-<module>-api
+future-module-<module>-biz
+```
+
+问题：
+
+- 自动拆分有边界误判风险。
+- 不同模块是否需要拆分，不应完全由脚本猜测。
+- `api` 包、`enums` 包、`Impl` 文件等规则需要写成可配置策略。
+
+建议：
+
+```text
+split_api_biz: true/false
+split_modules:
+  - asset
+  - crm
+api_packages:
+  - api
+  - enums
+biz_packages:
+  - controller
+  - service
+  - dal
+```
+
+并在 transform report 里记录每次拆分了哪些文件。
+
+### 10. core / biz / extend / custom 语义需要文档化
+
+当前结构方向合理：
+
+```text
+modules/core
+modules/biz
+modules/extend
+modules/custom
+```
+
+但语义还应写清楚。
+
+建议补充：
+
+- `core`：所有业务必选的平台核心能力。
+- `biz`：标准业务套件，如 CRM/ERP/Mall，可按业务启用。
+- `extend`：可选扩展能力，如 AI、支付、报表、工作流、公众号等。
+- `custom`：当前业务或客户定制模块。
+
+否则后续业务会纠结模块到底该放 `biz`、`extend` 还是 `custom`。
+
+### 11. 平台底座和业务实例还没分清
+
+当前 `future-vue-pro` 既像平台底座，又像业务实例。
+
+问题：
+
+- 平台通用能力和具体业务定制容易混在一个 repo。
+- 高考、Debet、新粮、相亲、同伴游都可能需要不同裁剪。
+
+建议区分：
+
+```text
+Business-Unit-for-Platform/ruoyi-vue-pro-base
+Business-Unit-for-Gaokao/gaokao-admin-backend
+Business-Unit-for-Debet/debet-admin-backend
+Business-Unit-for-Future/xinliang-admin-backend
+```
+
+clone-bot 负责生成 base 或业务实例，但生成模式要明确。
+
+### 12. sql/script 等上游全量内容需要分层裁剪
+
+当前生成仓库保留大量上游内容，例如：
+
+```text
+sql/mysql
+sql/oracle
+sql/postgresql
+sql/sqlserver
+sql/dm
+script/docker
+script/jenkins
+script/shell
+```
+
+问题：
+
+- 作为平台底座可以保留。
+- 作为具体业务实例会显得臃肿。
+- Agent 容易误以为所有数据库和脚本都是当前业务实际使用。
+
+建议：
+
+- 平台底座保留全量并标注用途。
+- 业务实例只保留实际使用的数据库脚本和运行脚本。
+- 其他内容转为引用平台底座或文档说明。
+
+### 13. 缺少 PR 化和审查闭环
+
+clone-bot 当前更像一次性创建/推送工具。
+
+问题：
+
+- 对已有业务仓库缺少 branch + PR 改造模式。
+- 生成结果缺少标准审查清单。
+- 不利于 Agent/人协作验收。
+
+建议支持两种模式：
+
+```text
+create_new_repo
+update_existing_repo_with_pr
+```
+
+`update_existing_repo_with_pr` 应：
+
+```text
+clone existing repo
+create branch
+apply transform
+write manifest/report
+open PR
+wait for CI/review
+```
+
+### 14. 归属还应迁到平台工程
+
+当前仓库在：
+
+```text
+FutureTechQuant/Clone-ruoyi-vue-pro-Bot
+```
+
+长期建议：
+
+```text
+Business-Unit-for-Platform/clone-ruoyi-vue-pro-bot
+```
+
+原因：
+
+- 它是平台级生成器，不属于某个单一业务。
+- 后续会服务高考、Debet、新粮、相亲、同伴游等多个业务。
+- 应与 `codegen-bot`、`ruoyi-vue-pro-base` 共同纳入平台工程资产。
+
 ## 当前主要断点
 
 ### 1. 两个 bot 还没有完全打通
