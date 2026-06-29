@@ -4,6 +4,8 @@
 
 ## 项目列表
 
+- [RuoYi / Yudao 平台化 Bot 关系](ruoyi-yudao-bot-relationship.md)：记录 `Clone-ruoyi-vue-pro-Bot` 与 `codegen-bot` 的分工、流水线关系和改造优先级。
+
 | 项目 | 阶段 | 当前责任人 | 前端框架 | 后端框架 | GitHub Organization | 备注 |
 |---|---|---|---|---|---|---|
 | 新粮 ERP+CRM+供应链 | 等待签合同 | 赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Future](https://github.com/Business-Unit-for-Future) | Ruoyi-Vue-Pro 框架，ERP/CRM/供应链金融。 |
