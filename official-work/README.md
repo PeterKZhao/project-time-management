@@ -16,6 +16,7 @@
 | ADF | Future, George | 申请不到 ADF 开发账号 | 用于 IaaS 到 PaaS 的数据同步，通过 pipeline 完成；当前阻塞是申请不到 ADF 开发账号。 |
 | SnapOne AI | George Wang | 开发前端界面 | 进入前端界面开发，先完成可交互页面和核心流程。 |
 | SnapOne UI 设计 | George Wang | UI 设计跟进 | 单独跟进 UI 设计稿、页面结构、交互细节和评审反馈，避免和 SnapOne AI 前端开发混在一起。 |
+| Enterprise Service | 吴涛、赵凯、郭方泽 | 需求澄清 / 合作模式梳理 | 记录 2026-06-29 会议后的跟进项：数字集团合作方式、数据获取、方向和郭方泽离职后的投入边界。详见 [Enterprise Service 跟进](enterprise-service.md)。 |
 | DMTM STU BO | Conor Zhou | Follow-up only | 只需要跟进，不是主责交付。 |
 
 ## 跟进规则
