@@ -5,167 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PeterKZhao 重要 × 紧急坐标轴</title>
   <meta name="description" content="PeterKZhao 项目时间管理：重要 × 紧急坐标轴四象限" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #08090a; --panel: #0f1011; --surface: rgba(255,255,255,.035); --surface-strong: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.09); --border-soft: rgba(255,255,255,.055); --text: #f7f8f8; --silver: #d0d6e0;
-      --muted: #8a8f98; --subtle: #62666d; --accent: #7170ff; --q1: #ff5c7a; --q2: #7170ff; --q3: #f5a524; --q4: #6b7280;
-      --side: #10b981; --work: #38bdf8;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-feature-settings: "cv01", "ss03"; color: var(--text); background: radial-gradient(circle at 22% 8%, rgba(113,112,255,.22), transparent 28%), radial-gradient(circle at 82% 4%, rgba(255,92,122,.13), transparent 30%), linear-gradient(180deg, #08090a 0%, #0b0c0e 52%, #08090a 100%); min-height: 100vh; }
-    a { color: inherit; text-decoration: none; }
-    .shell { width: min(1240px, calc(100% - 28px)); margin: 0 auto; }
-    header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border-soft); background: rgba(8,9,10,.78); backdrop-filter: blur(18px); }
-    .nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 510; }
-    .mark { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--q1)); box-shadow: 0 0 28px rgba(113,112,255,.36); }
-    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a { color: var(--silver); font-size: 13px; font-weight: 510; padding: 8px 10px; border: 1px solid transparent; border-radius: 999px; }
-    .nav-links a:hover { border-color: var(--border); background: rgba(255,255,255,.035); color: var(--text); }
-    .hero { padding: 70px 0 28px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--silver); border: 1px solid var(--border); background: rgba(255,255,255,.025); padding: 7px 11px; border-radius: 999px; font-size: 13px; font-weight: 510; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--side); box-shadow: 0 0 16px rgba(16,185,129,.75); }
-    h1 { margin: 22px 0 14px; max-width: 920px; font-size: clamp(40px, 7vw, 78px); line-height: .96; letter-spacing: -1.6px; font-weight: 510; }
-    .lead { max-width: 790px; color: var(--muted); font-size: clamp(16px, 2vw, 19px); line-height: 1.7; margin: 0; }
-    .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-    .pill { border: 1px solid var(--border); background: rgba(255,255,255,.025); color: var(--silver); padding: 8px 11px; border-radius: 999px; font-size: 13px; font-weight: 510; }
-    .pill.side::before, .pill.work::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
-    .pill.side::before { background: var(--side); } .pill.work::before { background: var(--work); }
-
-    .axis-wrap { position: relative; padding: 38px 0 24px; }
-    .axis-label { position: absolute; color: var(--silver); font-size: 13px; font-weight: 510; letter-spacing: .02em; background: rgba(8,9,10,.9); border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px; z-index: 3; }
-    .axis-label.y-high { top: 0; left: 50%; transform: translateX(-50%); }
-    .axis-label.y-low { bottom: -12px; left: 50%; transform: translateX(-50%); color: var(--muted); }
-    .axis-label.x-low { left: 0; top: 50%; transform: translateY(-50%); color: var(--muted); }
-    .axis-label.x-high { right: 0; top: 50%; transform: translateY(-50%); }
-    .axis-title-y { position: absolute; left: -42px; top: 50%; transform: translateY(-50%) rotate(-90deg); color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
-    .axis-title-x { text-align: center; color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; text-transform: uppercase; margin-top: 18px; }
-
-    .matrix { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(300px, auto)); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; background: rgba(255,255,255,.018); box-shadow: inset 0 0 45px rgba(255,255,255,.012), 0 24px 80px rgba(0,0,0,.28); }
-    .matrix::before { content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: linear-gradient(transparent, rgba(255,255,255,.2), transparent); z-index: 2; }
-    .matrix::after { content: ''; position: absolute; left: 0; top: 50%; height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent); z-index: 2; }
-    .quadrant { padding: 20px; min-height: 300px; position: relative; }
-    .quadrant.q2 { background: radial-gradient(circle at 100% 0%, rgba(113,112,255,.16), transparent 48%); }
-    .quadrant.q1 { background: radial-gradient(circle at 0% 0%, rgba(255,92,122,.16), transparent 48%); }
-    .quadrant.q4 { background: radial-gradient(circle at 100% 100%, rgba(107,114,128,.13), transparent 45%); }
-    .quadrant.q3 { background: radial-gradient(circle at 0% 100%, rgba(245,165,36,.12), transparent 45%); }
-    .q-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-    .q-name { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 590; letter-spacing: -.25px; }
-    .q-dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; }
-    .q-meta { color: var(--muted); font-size: 12px; font-family: 'JetBrains Mono', monospace; text-align: right; }
-    .q1 .q-dot { background: var(--q1); box-shadow: 0 0 18px rgba(255,92,122,.6); } .q2 .q-dot { background: var(--q2); box-shadow: 0 0 18px rgba(113,112,255,.62); } .q3 .q-dot { background: var(--q3); box-shadow: 0 0 18px rgba(245,165,36,.5); } .q4 .q-dot { background: var(--q4); }
-    .project-list { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
-    .project-chip { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 10px 12px; border-radius: 999px; border: 1px solid var(--border-soft); background: rgba(255,255,255,.04); color: var(--text); font-size: 13px; font-weight: 510; line-height: 1.25; transition: .15s ease; }
-    .project-chip:hover { transform: translateY(-1px); background: rgba(255,255,255,.065); border-color: rgba(255,255,255,.14); }
-    .project-chip::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
-    .project-chip.side::before { background: var(--side); } .project-chip.work::before { background: var(--work); }
-
-    .section-title { margin: 48px 0 14px; display: flex; justify-content: space-between; align-items: end; gap: 16px; }
-    .section-title h2 { margin: 0; font-size: clamp(26px, 3vw, 34px); line-height: 1.05; letter-spacing: -.6px; font-weight: 510; }
-    .section-title p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
-    .details-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .detail-card { border: 1px solid var(--border); background: rgba(255,255,255,.032); border-radius: 18px; padding: 16px; }
-    .detail-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
-    .detail-title { font-size: 15px; font-weight: 590; letter-spacing: -.15px; line-height: 1.35; }
-    .badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
-    .badge { font-size: 11px; border-radius: 999px; padding: 4px 7px; border: 1px solid var(--border); color: var(--silver); background: rgba(255,255,255,.025); white-space: nowrap; }
-    .badge.side { color: #d1fae5; border-color: rgba(16,185,129,.24); background: rgba(16,185,129,.08); } .badge.work { color: #e0f2fe; border-color: rgba(56,189,248,.24); background: rgba(56,189,248,.08); }
-    .badge.q1 { color: #ffe4ea; border-color: rgba(255,92,122,.25); background: rgba(255,92,122,.09); } .badge.q2 { color: #eef0ff; border-color: rgba(113,112,255,.25); background: rgba(113,112,255,.10); } .badge.q3 { color: #fff2d8; border-color: rgba(245,165,36,.25); background: rgba(245,165,36,.08); } .badge.q4 { color: #e5e7eb; border-color: rgba(107,114,128,.25); background: rgba(107,114,128,.10); }
-    .reason, .next { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
-    .next { color: var(--silver); margin-top: 8px; }
-    .label { color: var(--subtle); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
-
-    .advice { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; margin: 34px 0 54px; }
-    .panel { border: 1px solid var(--border); background: rgba(255,255,255,.03); border-radius: 22px; padding: 20px; }
-    .panel h2 { margin: 0 0 12px; font-size: 24px; letter-spacing: -.4px; font-weight: 590; }
-    ol, ul { margin: 0; padding-left: 20px; color: var(--silver); line-height: 1.75; font-size: 14px; } li + li { margin-top: 8px; }
-    code { font-family: 'JetBrains Mono', monospace; font-size: .92em; color: #eef0ff; background: rgba(113,112,255,.12); border: 1px solid rgba(113,112,255,.18); border-radius: 6px; padding: 1px 5px; }
-    footer { padding: 10px 0 44px; color: var(--subtle); font-size: 13px; }
-    @media (max-width: 960px) { .axis-label.x-low, .axis-label.x-high, .axis-title-y { display: none; } .matrix { grid-template-columns: 1fr; grid-template-rows: auto; } .matrix::before, .matrix::after { display: none; } .quadrant { min-height: auto; border-bottom: 1px solid var(--border-soft); } .quadrant:last-child { border-bottom: 0; } .details-grid, .advice { grid-template-columns: 1fr; } }
-    @media (max-width: 700px) { .nav { align-items: flex-start; flex-direction: column; } .hero { padding-top: 42px; } .axis-label.y-high, .axis-label.y-low { position: static; display: inline-flex; transform: none; margin: 0 8px 10px 0; } .axis-wrap { padding-top: 14px; } .project-chip { border-radius: 14px; width: 100%; } }
+    :root { --bg:#08090a; --panel:#0f1011; --border:rgba(255,255,255,.09); --text:#f7f8f8; --silver:#d0d6e0; --muted:#8a8f98; --accent:#7170ff; --q1:#ff5c7a; --q2:#7170ff; --q3:#f5a524; --q4:#6b7280; --side:#10b981; --work:#38bdf8; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--text);background:radial-gradient(circle at 22% 8%,rgba(113,112,255,.22),transparent 28%),linear-gradient(180deg,#08090a,#0b0c0e 52%,#08090a);min-height:100vh} a{color:inherit;text-decoration:none} .shell{width:min(1240px,calc(100% - 28px));margin:0 auto} header{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.055);background:rgba(8,9,10,.78);backdrop-filter:blur(18px)} .nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0} .brand{display:flex;align-items:center;gap:10px;font-weight:600} .mark{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--q1))} .nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end} .nav-links a{color:var(--silver);font-size:13px;padding:8px 10px;border-radius:999px} .hero{padding:64px 0 28px} .eyebrow,.pill{display:inline-flex;align-items:center;color:var(--silver);border:1px solid var(--border);background:rgba(255,255,255,.025);padding:7px 11px;border-radius:999px;font-size:13px} .dot{width:7px;height:7px;border-radius:50%;background:var(--side);margin-right:8px} h1{margin:22px 0 14px;max-width:920px;font-size:clamp(40px,7vw,78px);line-height:.96;letter-spacing:-1.6px;font-weight:520} .lead{max-width:820px;color:var(--muted);font-size:clamp(16px,2vw,19px);line-height:1.7;margin:0} .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px} .axis-wrap{position:relative;padding:38px 0 24px} .axis-label{position:absolute;color:var(--silver);font-size:13px;background:rgba(8,9,10,.9);border:1px solid var(--border);border-radius:999px;padding:8px 12px;z-index:3} .y-high{top:0;left:50%;transform:translateX(-50%)} .y-low{bottom:-12px;left:50%;transform:translateX(-50%);color:var(--muted)} .x-low{left:0;top:50%;transform:translateY(-50%);color:var(--muted)} .x-high{right:0;top:50%;transform:translateY(-50%)} .matrix{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(300px,auto));border:1px solid var(--border);border-radius:28px;overflow:hidden;background:rgba(255,255,255,.018)} .matrix:before{content:'';position:absolute;left:50%;top:0;width:1px;height:100%;background:rgba(255,255,255,.18);z-index:2} .matrix:after{content:'';position:absolute;left:0;top:50%;height:1px;width:100%;background:rgba(255,255,255,.18);z-index:2} .quadrant{padding:20px;min-height:300px} .q2{background:radial-gradient(circle at 100% 0%,rgba(113,112,255,.16),transparent 48%)} .q1{background:radial-gradient(circle at 0 0,rgba(255,92,122,.16),transparent 48%)} .q4{background:radial-gradient(circle at 100% 100%,rgba(107,114,128,.13),transparent 45%)} .q3{background:radial-gradient(circle at 0 100%,rgba(245,165,36,.12),transparent 45%)} .q-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px} .q-name{font-size:18px;font-weight:600} .q-meta{color:var(--muted);font-size:12px} .project-list{display:flex;flex-wrap:wrap;gap:10px} .project-chip{display:inline-flex;align-items:center;gap:7px;max-width:100%;padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.055);background:rgba(255,255,255,.04);font-size:13px;font-weight:520} .project-chip:before{content:'';width:7px;height:7px;border-radius:50%} .side:before{background:var(--side)} .work:before{background:var(--work)} .section-title{margin:48px 0 14px} .section-title h2{margin:0;font-size:32px} .section-title p{margin:6px 0 0;color:var(--muted);font-size:14px} .details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px} .detail-card,.panel{border:1px solid var(--border);background:rgba(255,255,255,.032);border-radius:18px;padding:16px} .detail-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px} .detail-title{font-size:15px;font-weight:600} .badges{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end} .badge{font-size:11px;border-radius:999px;padding:4px 7px;border:1px solid var(--border);color:var(--silver)} .badge.side{color:#d1fae5} .badge.work{color:#e0f2fe} .badge.q1{color:#ffe4ea} .badge.q2{color:#eef0ff} .badge.q4{color:#e5e7eb} .reason,.next{margin:0;color:var(--muted);font-size:13px;line-height:1.6} .next{color:var(--silver);margin-top:8px} .label{color:#62666d;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em} .advice{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin:34px 0 54px} ol,ul{margin:0;padding-left:20px;color:var(--silver);line-height:1.75;font-size:14px} footer{padding:10px 0 44px;color:#62666d;font-size:13px} code{background:rgba(113,112,255,.12);border-radius:6px;padding:1px 5px} @media(max-width:960px){.x-low,.x-high{display:none}.matrix{grid-template-columns:1fr}.matrix:before,.matrix:after{display:none}.details-grid,.advice{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="#top"><span class="mark"></span><span>重要 × 紧急坐标轴</span></a>
-      <nav class="nav-links" aria-label="页面导航">
-        <a href="#matrix">坐标轴</a><a href="#details">项目详情</a><a href="#advice">本周建议</a><a href="priority-matrix/README.md">Markdown</a><a href="https://github.com/PeterKZhao/project-time-management" target="_blank" rel="noreferrer">GitHub</a>
-      </nav>
-    </div>
-  </header>
-
+  <header><div class="shell nav"><a class="brand" href="#top"><span class="mark"></span><span>重要 × 紧急坐标轴</span></a><nav class="nav-links"><a href="#matrix">坐标轴</a><a href="#details">项目详情</a><a href="#advice">本周建议</a><a href="github-organization-inventory.md">组织清单</a><a href="priority-matrix/README.md">Markdown</a><a href="https://github.com/PeterKZhao/project-time-management">GitHub</a></nav></div></header>
   <main id="top" class="shell">
-    <section class="hero">
-      <div class="eyebrow"><span class="dot"></span>坐标轴视图 · 四象限只显示项目名</div>
-      <h1>重要 × 紧急四象限</h1>
-      <p class="lead">越往上越重要，越往右越紧急。四象限里只放项目名，便于快速扫视；理由和下一步统一放在下方详情区。</p>
-      <div class="legend"><span class="pill side">副业 / 创业项目</span><span class="pill work">本职工作 / 主业跟进</span><span class="pill">右上：本周优先</span><span class="pill">左上：持续推进</span></div>
-    </section>
-
-    <section id="matrix" class="axis-wrap" aria-label="重要紧急坐标轴">
-      <div class="axis-label y-high">重要 ↑</div><div class="axis-label y-low">不重要 ↓</div><div class="axis-label x-low">← 不紧急</div><div class="axis-label x-high">紧急 →</div><div class="axis-title-y">Importance</div>
-      <div class="matrix">
-        <article class="quadrant q2" aria-label="Q2 重要不紧急">
-          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q2 重要不紧急</div><div class="q-meta">重要高 · 紧急低</div></div>
-          <div class="project-list">
-            <a class="project-chip work" href="#ai-architecture">AI 架构设计</a><a class="project-chip work" href="#aml">AML Agentic AI</a><a class="project-chip work" href="#rba">Revise Benefit Amount</a><a class="project-chip work" href="#fe">FE Skill Building</a><a class="project-chip work" href="#adf">ADF</a><a class="project-chip work" href="#snapone">SnapOne AI</a><a class="project-chip work" href="#snapone-ui">SnapOne UI 设计</a><a class="project-chip work" href="#pw">Partial Withdrawal Processing</a><a class="project-chip work" href="#nmc">Non-Medical Claim</a><a class="project-chip side" href="#ai-factory">AI 软件工厂 / youlidao.ai</a><a class="project-chip side" href="#quant">量化交易</a><a class="project-chip side" href="#xinliang">新粮 ERP+CRM+供应链</a><a class="project-chip side" href="#dating">美国华人相亲 / 相亲系统</a><a class="project-chip side" href="#companion">同伴游 / 教练教师陪伴 + 券系统</a>
-          </div>
-        </article>
-        <article class="quadrant q1" aria-label="Q1 重要且紧急">
-          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q1 重要且紧急</div><div class="q-meta">重要高 · 紧急高</div></div>
-          <div class="project-list">
-            <a class="project-chip side" href="#blue-parrot">蓝鹦鹉在线教育</a><a class="project-chip side" href="#gaokao">高考志愿填报</a><a class="project-chip side" href="#debt-health">AI 债务健康检查管理系统</a><a class="project-chip side" href="#payment">支付编排 / MCN/KOL ERPNext 架构</a>
-          </div>
-        </article>
-        <article class="quadrant q4" aria-label="Q4 不重要不紧急">
-          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q4 不重要不紧急</div><div class="q-meta">重要低 · 紧急低</div></div>
-          <div class="project-list"><a class="project-chip side" href="#video">视频生成</a></div>
-        </article>
-        <article class="quadrant q3" aria-label="Q3 紧急不重要">
-          <div class="q-head"><div class="q-name"><span class="q-dot"></span>Q3 紧急不重要</div><div class="q-meta">重要低 · 紧急高</div></div>
-          <div class="project-list"></div>
-        </article>
-      </div>
-      <div class="axis-title-x">Urgency</div>
-    </section>
-
-    <section id="details">
-      <div class="section-title"><div><h2>项目详情</h2><p>四象限只看位置；这里看原因和下一步。</p></div></div>
-      <div class="details-grid">
-        <article id="blue-parrot" class="detail-card"><div class="detail-top"><div class="detail-title">蓝鹦鹉在线教育</div><div class="badges"><span class="badge side">副业</span><span class="badge q1">Q1</span></div></div><p class="reason">iOS 发布和 Apple Pay 系统测试阻塞会直接影响产品上线/验证。</p><p class="next"><span class="label">Next</span> 本周优先推动阻塞解除，明确 Apple Pay 测试和发布动作。</p></article>
-        <article id="gaokao" class="detail-card"><div class="detail-top"><div class="detail-title">高考志愿填报</div><div class="badges"><span class="badge side">副业</span><span class="badge q1">Q1</span></div></div><p class="reason">直播已经开始，当前重点从技术调整转到多系统直播、高招会现场获客和宣传物料。</p><p class="next"><span class="label">Next</span> 完成多系统直播；小程序暂不改；软文推广交给付海虎并教会方法；去高招会，决定并制作宣传板子。</p></article>
-        <article id="debt-health" class="detail-card"><div class="detail-top"><div class="detail-title">AI 债务健康检查管理系统</div><div class="badges"><span class="badge side">副业</span><span class="badge q1">Q1</span></div></div><p class="reason">已上线首页并验证登录，当前需要从静态首页推进到可演示、可获客、可提交项目的前端闭环。</p><p class="next"><span class="label">Next</span> 完成 P0 前端闭环：准入条件、多步骤申请、材料上传 Mock、AI 初筛结果和我的项目。</p></article>
-        <article id="payment" class="detail-card"><div class="detail-top"><div class="detail-title">支付编排 / MCN/KOL ERPNext 架构</div><div class="badges"><span class="badge side">副业</span><span class="badge q1">Q1</span></div></div><p class="reason">支付编排和 MCN/KOL ERPNext 架构是同一条 ERPNext-first 财务业务建模主线。</p><p class="next"><span class="label">Next</span> 聚焦合同、付款、对账、报税流程，沉淀可交付架构和原型范围。</p></article>
-        <article id="ai-architecture" class="detail-card"><div class="detail-top"><div class="detail-title">AI 架构设计</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">作为主业 AI/Agentic 工作的架构底座，重要但当前不抢 Q1。</p><p class="next"><span class="label">Next</span> 梳理目标架构、关键模块、集成边界、数据与权限设计，形成可评审方案。</p></article>
-        <article id="aml" class="detail-card"><div class="detail-top"><div class="detail-title">AML Agentic AI</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">技术路径基本可行，当前卡在权限配置。</p><p class="next"><span class="label">Next</span> 等权限配置完成后继续推进开发和交付。</p></article>
-        <article id="rba" class="detail-card"><div class="detail-top"><div class="detail-title">Revise Benefit Amount</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">Doing transaction，但当前不放 Q1 抢时间。</p><p class="next"><span class="label">Next</span> 跟进 suppression scenario 和业务校验。</p></article>
-        <article id="fe" class="detail-card"><div class="detail-top"><div class="detail-title">FE Skill Building</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">需要形成前端能力/规范改进依据，但不作为 Q1 紧急项。</p><p class="next"><span class="label">Next</span> 按节奏完成代码扫描，输出问题清单和改进范围。</p></article>
-        <article id="adf" class="detail-card"><div class="detail-top"><div class="detail-title">ADF</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">IaaS 到 PaaS 的数据同步需要通过 pipeline 完成，当前卡在 ADF 开发账号申请。</p><p class="next"><span class="label">Next</span> 推动 ADF 开发账号/权限申请，拿到账号后梳理 pipeline 同步方案。</p></article>
-        <article id="snapone" class="detail-card"><div class="detail-top"><div class="detail-title">SnapOne AI</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">已进入前端界面开发阶段，但当前不放 Q1 抢时间。</p><p class="next"><span class="label">Next</span> 按节奏开发前端界面，先跑通核心页面和流程。</p></article>
-        <article id="snapone-ui" class="detail-card"><div class="detail-top"><div class="detail-title">SnapOne UI 设计</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">UI 设计影响 SnapOne AI 前端交付质量和评审节奏，但当前不放 Q1。</p><p class="next"><span class="label">Next</span> 梳理 UI 设计稿、关键页面、交互细节和评审反馈。</p></article>
-        <article id="pw" class="detail-card"><div class="detail-top"><div class="detail-title">Partial Withdrawal Processing</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">处于 Solution design，业务已接受 Autobot，但当前不紧急。</p><p class="next"><span class="label">Next</span> 按节奏推进 AI 降低人工负担的可行性判断。</p></article>
-        <article id="nmc" class="detail-card"><div class="detail-top"><div class="detail-title">Non-Medical Claim</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">需求细节未补齐，当前不紧急。</p><p class="next"><span class="label">Next</span> 等细节明确后再安排下一步。</p></article>
-        <article id="ai-factory" class="detail-card"><div class="detail-top"><div class="detail-title">AI 软件工厂 / youlidao.ai</div><div class="badges"><span class="badge side">副业</span><span class="badge q2">Q2</span></div></div><p class="reason">战略价值高，关系到长期获客和产品化，但当前不是最紧急事项。</p><p class="next"><span class="label">Next</span> 持续打磨可演示/可成交的包装版本。</p></article>
-        <article id="quant" class="detail-card"><div class="detail-top"><div class="detail-title">量化交易</div><div class="badges"><span class="badge side">副业</span><span class="badge q2">Q2</span></div></div><p class="reason">长期战略和能力积累价值高，但当前没有立即截止点。</p><p class="next"><span class="label">Next</span> 持续整理量化、资讯和回测工具链，控制投入节奏。</p></article>
-        <article id="xinliang" class="detail-card"><div class="detail-top"><div class="detail-title">新粮 ERP+CRM+供应链</div><div class="badges"><span class="badge side">副业</span><span class="badge q2">Q2</span></div></div><p class="reason">等待签合同，价值高但当前依赖外部确认。</p><p class="next"><span class="label">Next</span> 跟进签约节点，准备签约后启动清单。</p></article>
-        <article id="dating" class="detail-card"><div class="detail-top"><div class="detail-title">美国华人相亲 / 相亲系统</div><div class="badges"><span class="badge side">副业</span><span class="badge q2">Q2</span></div></div><p class="reason">有长期产品潜力，但仍在规划。</p><p class="next"><span class="label">Next</span> 完成 MVP 范围和用户信任机制。</p></article>
-        <article id="companion" class="detail-card"><div class="detail-top"><div class="detail-title">同伴游 / 教练教师陪伴 + 券系统</div><div class="badges"><span class="badge side">副业</span><span class="badge q2">Q2</span></div></div><p class="reason">长期可做，但当前还在模式设计。</p><p class="next"><span class="label">Next</span> 梳理服务 SKU、履约和支付闭环。</p></article>
-        <article id="video" class="detail-card"><div class="detail-top"><div class="detail-title">视频生成</div><div class="badges"><span class="badge side">副业</span><span class="badge q4">Q4</span></div></div><p class="reason">当前是组合整理，暂无近期交付压力。</p><p class="next"><span class="label">Next</span> 暂缓，等业务单元定位更清楚再推进。</p></article>
-      </div>
-    </section>
-
-    <section id="advice" class="advice">
-      <div class="panel"><h2>本周建议</h2><ol><li>Q1 不再放主业执行项；主业统一挪到 Q2，按节奏推进。</li><li><code>高考志愿填报</code> 直播已经开始，下一步优先完成多系统直播、去高招会、决定并制作宣传板子。</li><li>高考小程序暂不改；软文推广交给付海虎，并把选题、结构、发布和复盘方法教会。</li><li><code>AI 债务健康检查管理系统</code> 继续完善正式客户前端和 AI Agent 体验。</li><li><code>蓝鹦鹉在线教育</code> 继续定位 iOS 发布和 Apple Pay 系统测试阻塞点。</li><li><code>新粮</code> 只跟签约节点，不提前重投入。</li><li>Q3 主业已删除；Q4 项目不要本周主动展开。</li></ol></div>
-      <div class="panel"><h2>读图方式</h2><ul><li><strong>越往上</strong>：越重要，长期价值或关键影响越高。</li><li><strong>越往右</strong>：越紧急，本周越需要动作。</li><li><strong>四象限</strong>：只显示项目名，快速扫视位置。</li><li><strong>下方详情</strong>：再看原因和下一步。</li></ul></div>
-    </section>
+    <section class="hero"><div class="eyebrow"><span class="dot"></span>2026-07-07 · 已按 GitHub 全部组织校准</div><h1>重要 × 紧急四象限</h1><p class="lead">越往上越重要，越往右越紧急。副业/创业项目决定时间投入；本职工作单独跟进，不参与副业优先级排序。</p><div class="legend"><span class="pill">副业 / BU</span><span class="pill">本职工作</span><span class="pill">右上：本周优先</span><span class="pill">左上：持续推进</span></div></section>
+    <section id="matrix" class="axis-wrap"><div class="axis-label y-high">重要 ↑</div><div class="axis-label y-low">不重要 ↓</div><div class="axis-label x-low">← 不紧急</div><div class="axis-label x-high">紧急 →</div><div class="matrix"><article class="quadrant q2"><div class="q-head"><div class="q-name">Q2 重要不紧急</div><div class="q-meta">长期能力</div></div><div class="project-list"><a class="project-chip side" href="#ai-platform">主业 AI 平台</a><a class="project-chip side" href="#enterprise-service">Enterprise Service 客户技术赋能</a><a class="project-chip side" href="#platform">Platform 底座 / Clone &amp; Codegen</a><a class="project-chip side" href="#quant">量化交易</a><a class="project-chip side" href="#xinliang">新粮 ERP+CRM+供应链</a><a class="project-chip side" href="#dating">美国华人相亲 / 相亲系统</a><a class="project-chip side" href="#jiyunbao">集运宝</a><a class="project-chip side" href="#bidscout">BidScout 招投标情报</a><a class="project-chip side" href="#data-intelligence">Data Intelligence 能力中心</a><a class="project-chip side" href="#automation">Automation 能力中心</a><a class="project-chip side" href="#consulting">Consulting 交付方法论</a><a class="project-chip work" href="#ai-architecture">AI 架构设计</a><a class="project-chip work" href="#aml">AML Agentic AI</a><a class="project-chip work" href="#official-other">FE Skill Building / ADF / SnapOne / 其他工作项</a></div></article><article class="quadrant q1"><div class="q-head"><div class="q-name">Q1 重要且紧急</div><div class="q-meta">本周优先</div></div><div class="project-list"><a class="project-chip side" href="#blue-parrot">Blue Parrot 在线教育</a><a class="project-chip side" href="#gaokao">高考志愿填报</a><a class="project-chip side" href="#debt-health">AI 债务健康检查管理系统</a><a class="project-chip side" href="#payment">支付编排 / MCN/KOL ERPNext 架构</a></div></article><article class="quadrant q4"><div class="q-head"><div class="q-name">Q4 不重要不紧急</div><div class="q-meta">暂缓</div></div><div class="project-list"><a class="project-chip side" href="#video">视频生成</a></div></article><article class="quadrant q3"><div class="q-head"><div class="q-name">Q3 紧急不重要</div><div class="q-meta">委托/快速处理</div></div><div class="project-list"></div></article></div></section>
+    <section id="details"><div class="section-title"><h2>项目详情</h2><p>四象限只看位置；这里看原因和下一步。</p></div><div class="details-grid">
+        <article id="blue-parrot" class="detail-card"><div class="detail-top"><div class="detail-title">Blue Parrot 在线教育</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q1">Q1</span></div></div><p class="reason">已独立成 BU，核心 App/后端资产需要继续解除上线/测试阻塞。</p><p class="next"><span class="label">Next</span> 定位 iOS/Apple Pay/测试阻塞，明确本周可交付动作。</p></article>
+        <article id="gaokao" class="detail-card"><div class="detail-top"><div class="detail-title">高考志愿填报</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q1">Q1</span></div></div><p class="reason">仍处关键转化窗口，且 Gaokao 组织内业务/数据/知识库/部署资产较多。</p><p class="next"><span class="label">Next</span> 继续围绕直播、高招会、宣传板、线索承接和代表爬虫/知识库资产推进。</p></article>
+        <article id="debt-health" class="detail-card"><div class="detail-top"><div class="detail-title">AI 债务健康检查管理系统</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q1">Q1</span></div></div><p class="reason">前台、后台、部署和 requirements 已形成闭环，当前应推进可演示获客/提交。</p><p class="next"><span class="label">Next</span> 完成 P0 前端闭环和 AI 初筛/我的项目体验。</p></article>
+        <article id="payment" class="detail-card"><div class="detail-top"><div class="detail-title">支付编排 / MCN/KOL ERPNext 架构</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q1">Q1</span></div></div><p class="reason">ERPNext-first 财务业务建模主线已有 mcn-kol-finance 实现仓库。</p><p class="next"><span class="label">Next</span> 聚焦合同、付款、对账、报税流程和 Sprint 0-1 骨架。</p></article>
+        <article id="ai-platform" class="detail-card"><div class="detail-top"><div class="detail-title">主业 AI 平台</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">客户包月 AI 工具平台是主业资产沉淀方向。</p><p class="next"><span class="label">Next</span> 继续维护 requirements、platform-roadmap、knowledge-base 和工具底座。</p></article>
+        <article id="enterprise-service" class="detail-card"><div class="detail-top"><div class="detail-title">Enterprise Service 客户技术赋能</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">对外客户技术赋能业务，和 Debet API/政策匹配方向相关。</p><p class="next"><span class="label">Next</span> 继续梳理客户方案、政策项目匹配 Agent/知识库/skills/playbooks。</p></article>
+        <article id="platform" class="detail-card"><div class="detail-top"><div class="detail-title">Platform 底座 / Clone &amp; Codegen</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">承载 RuoYi/Yudao/ERPNext 底座和 codegen/clone 工作流。</p><p class="next"><span class="label">Next</span> 保持底座、clone-bot、codegen-bot 与业务输出边界。</p></article>
+        <article id="quant" class="detail-card"><div class="detail-top"><div class="detail-title">量化交易</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">长期投研/回测/资讯能力积累，有大量 upstream fork 可参考。</p><p class="next"><span class="label">Next</span> 控制投入节奏，优先 requirements 与知识库。</p></article>
+        <article id="xinliang" class="detail-card"><div class="detail-top"><div class="detail-title">新粮 ERP+CRM+供应链</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">供应链金融方向，等待签约节点。</p><p class="next"><span class="label">Next</span> 只跟签约和启动条件，不提前重投入。</p></article>
+        <article id="dating" class="detail-card"><div class="detail-top"><div class="detail-title">美国华人相亲 / 相亲系统</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">商业可行性/MVP 先行，当前仍在规划。</p><p class="next"><span class="label">Next</span> 明确会员/候选人/场景化相处/核验隐私 MVP。</p></article>
+        <article id="jiyunbao" class="detail-card"><div class="detail-top"><div class="detail-title">集运宝</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">已有官网与标准仓库，但当前不抢主线。</p><p class="next"><span class="label">Next</span> 保留观察，按业务机会推进。</p></article>
+        <article id="bidscout" class="detail-card"><div class="detail-top"><div class="detail-title">BidScout 招投标情报</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">已有业务组织和标准仓库，待明确 MVP。</p><p class="next"><span class="label">Next</span> 梳理招投标情报、线索发现和 AI Agent 边界。</p></article>
+        <article id="data-intelligence" class="detail-card"><div class="detail-top"><div class="detail-title">Data Intelligence 能力中心</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">支撑 RAG、BI、知识库和产业情报。</p><p class="next"><span class="label">Next</span> 作为能力中心维护，不参与副业 Q1。</p></article>
+        <article id="automation" class="detail-card"><div class="detail-top"><div class="detail-title">Automation 能力中心</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">支撑 RPA、工作流、API 集成和文档自动化。</p><p class="next"><span class="label">Next</span> 作为能力中心维护。</p></article>
+        <article id="consulting" class="detail-card"><div class="detail-top"><div class="detail-title">Consulting 交付方法论</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q2">Q2</span></div></div><p class="reason">支撑客户诊断、售前方案和交付方法论。</p><p class="next"><span class="label">Next</span> 沉淀模板和方案蓝图。</p></article>
+        <article id="video" class="detail-card"><div class="detail-top"><div class="detail-title">视频生成</div><div class="badges"><span class="badge side">副业/BU</span><span class="badge q4">Q4</span></div></div><p class="reason">视频工具链已成组织，但当前缺少近期交付压力。</p><p class="next"><span class="label">Next</span> 暂缓，不和 Q1 项目抢时间。</p></article>
+        <article id="ai-architecture" class="detail-card"><div class="detail-top"><div class="detail-title">AI 架构设计</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">需要作为主业能力和后续 AI 平台/Agentic 工作的架构底座。</p><p class="next"><span class="label">Next</span> 梳理目标架构、关键模块、集成边界、数据与权限设计。</p></article>
+        <article id="aml" class="detail-card"><div class="detail-top"><div class="detail-title">AML Agentic AI</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">技术路径基本可行，当前卡在权限配置。</p><p class="next"><span class="label">Next</span> 等权限配置完成后继续推进。</p></article>
+        <article id="official-other" class="detail-card"><div class="detail-top"><div class="detail-title">FE Skill Building / ADF / SnapOne / 其他工作项</div><div class="badges"><span class="badge work">本职</span><span class="badge q2">Q2</span></div></div><p class="reason">属于主业跟进，不放入副业 Q1。</p><p class="next"><span class="label">Next</span> 按 official-work/README.md 单独检查。</p></article>
+      </div></section>
+    <section id="advice" class="advice"><div class="panel"><h2>本周建议</h2><ol><li>Q1 聚焦 Blue Parrot、高考、Debet、MCN/KOL ERPNext。</li><li>主业 AI 平台、Enterprise Service、Platform 和能力中心放 Q2 持续推进。</li><li>新粮、Dating、集运宝、BidScout、量化保留视图，但不抢 Q1。</li><li>视频生成暂缓，等业务窗口更明确再推进。</li></ol></div><div class="panel"><h2>读图方式</h2><ul><li><strong>越往上</strong>：越重要。</li><li><strong>越往右</strong>：越紧急。</li><li><strong>绿色</strong>：副业/BU。</li><li><strong>蓝色</strong>：本职工作。</li></ul></div></section>
   </main>
-
-  <footer class="shell">Source: <a href="https://github.com/PeterKZhao/project-time-management" target="_blank" rel="noreferrer">PeterKZhao/project-time-management</a> · Coordinate-axis view generated from <code>priority-matrix/README.md</code></footer>
+  <footer class="shell">Source: <a href="https://github.com/PeterKZhao/project-time-management">PeterKZhao/project-time-management</a> · Generated from <code>priority-matrix/README.md</code></footer>
 </body>
 </html>
