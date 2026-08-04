@@ -2,7 +2,7 @@
 
 > 用于每周判断先做什么。副业和本职工作仍然分开看：副业决定时间投入，本职工作只决定跟进顺序。
 
-> 2026-07-07 已按 GitHub 当前可见组织重新校准；能力中心/平台型 BU 进入视图，但不和具体成交/上线项目抢 Q1。
+> 2026-08-04 已按 GitHub 当前可见组织和业务决策重新校准；能力中心/平台型 BU 进入视图，但不和具体成交/上线项目抢 Q1。
 
 ## 判断标准
 
@@ -17,22 +17,24 @@
 
 | 象限 | 项目 | 理由 | 下一步 |
 |---|---|---|---|
-| Q1 重要且紧急 | Blue Parrot 在线教育 | 已独立成 BU，核心 App/后端资产需要继续解除上线/测试阻塞。 | 定位 iOS/Apple Pay/测试阻塞，明确本周可交付动作。 |
-| Q1 重要且紧急 | 高考志愿填报 | 仍处关键转化窗口，且 Gaokao 组织内业务/数据/知识库/部署资产较多。 | 继续围绕直播、高招会、宣传板、线索承接和代表爬虫/知识库资产推进。 |
-| Q1 重要且紧急 | AI 债务健康检查管理系统 | 前台、后台、部署和 requirements 已形成闭环，当前应推进可演示获客/提交。 | 完成 P0 前端闭环和 AI 初筛/我的项目体验。 |
-| Q1 重要且紧急 | 支付编排 / MCN/KOL ERPNext 架构 | ERPNext-first 财务业务建模主线已有 mcn-kol-finance 实现仓库。 | 聚焦合同、付款、对账、报税流程和 Sprint 0-1 骨架。 |
-| Q2 重要不紧急 | 主业 AI 平台 | 客户包月 AI 工具平台是主业资产沉淀方向。 | 继续维护 requirements、platform-roadmap、knowledge-base 和工具底座。 |
-| Q2 重要不紧急 | Enterprise Service 客户技术赋能 | 对外客户技术赋能业务，和 Debet API/政策匹配方向相关。 | 继续梳理客户方案、政策项目匹配 Agent/知识库/skills/playbooks。 |
-| Q2 重要不紧急 | Platform 底座 / Clone & Codegen | 承载 RuoYi/Yudao/ERPNext 底座和 codegen/clone 工作流。 | 保持底座、clone-bot、codegen-bot 与业务输出边界。 |
-| Q2 重要不紧急 | 量化交易 | 长期投研/回测/资讯能力积累，有大量 upstream fork 可参考。 | 控制投入节奏，优先 requirements 与知识库。 |
-| Q2 重要不紧急 | 新粮 ERP+CRM+供应链 | 供应链金融方向，等待签约节点。 | 只跟签约和启动条件，不提前重投入。 |
-| Q2 重要不紧急 | 美国华人相亲 / 相亲系统 | 商业可行性/MVP 先行，当前仍在规划。 | 明确会员/候选人/场景化相处/核验隐私 MVP。 |
+| Q1 重要且紧急 | Blue Parrot 在线教育 | 已独立成 BU，核心 App/后端资产需要继续解除上线和测试阻塞。 | 定位 iOS、Apple Pay 和测试阻塞，明确本周可交付动作。 |
+| Q1 重要且紧急 | 高考志愿填报 | 仍处内容、直播和线索转化窗口，且已有数据、知识库和咨询交付资产。 | 推进高考数字人短视频、半自动直播、线索承接和人工咨询闭环。 |
+| Q1 重要且紧急 | MCN/KOL ERPNext 架构 | 支付编排已并入 MCN/KOL；ERPNext-first 财务业务建模已有 mcn-kol-finance 实现仓库。 | 聚焦合同、付款、对账、报税流程和 Sprint 0-1 骨架。 |
+| Q1 重要且紧急 | 新粮 ERP+CRM+供应链 | 项目已经签约，进入范围确认、启动和交付阶段。 | 确认合同范围、里程碑、数据边界、验收标准并启动 Sprint 0。 |
+| Q1 重要且紧急 | AI 数字人 / 视频生成 | 数字人已成为跨业务视频和直播能力，并确定先服务高考业务。 | 完成首批 10 条高考短视频、1 场半自动直播及来源/留资追踪。 |
+| Q2 重要不紧急 | AI 债务健康检查管理系统 | 前台、后台、部署和 requirements 已形成闭环，但当前优先级低于 MCN/KOL。 | 保持可演示闭环和 AI 初筛能力，等待明确客户或交付窗口后再升 Q1。 |
+| Q2 重要不紧急 | AI 软件工厂 / 主业 AI 平台 | AI Platform 主责 youlidao.ai 产品、订阅和工具聚合，Platform 提供工程底座。 | 维护 requirements、platform-roadmap、knowledge-base，并明确 AI Platform 与 Platform 的接口。 |
+| Q2 重要不紧急 | Enterprise Service 客户技术赋能 | 对外客户技术赋能业务，围绕政策项目匹配、客户方案和交付资产。 | 梳理 Agent、知识库、skills、playbooks 和 project-management 的交付边界。 |
+| Q2 重要不紧急 | Platform 底座 / Clone & Codegen | 承载 RuoYi/Yudao/ERPNext 底座和 codegen/clone 工作流。 | 作为 AI 软件工厂和各 BU 的工程支撑，保持与具体业务输出的边界。 |
+| Q2 重要不紧急 | 量化交易 | 已有 25 个仓库，其中 20 个为 upstream forks，适合长期能力积累。 | 优先维护 requirements、stock-knowledge-base、stock-research，控制新增 fork 和实现投入。 |
+| Q2 重要不紧急 | 同伴游 / 教练教师陪伴 + 券系统 | 与 Dating 合并并以同伴游为项目主名，仍处商业可行性和 MVP 规划阶段。 | 明确会员、候选人/教练教师、陪伴场景、券结算、核验和隐私 MVP。 |
+| Q2 重要不紧急 | Digital Cabin 数字方舱 | 已有 7 个私有仓库及原型、平台、知识库和 Agent 资产，但尚未确认紧急客户窗口。 | 明确客户、合同、首个场景和验收节点，再决定是否升 Q1。 |
+| Q2 重要不紧急 | Lingsure | 已有 UniApp 与部署资产，作为副业纳入组合，但商业定位和当前客户尚未写清。 | 补齐业务定位、当前客户、收入路径和最小 MVP。 |
 | Q2 重要不紧急 | 集运宝 | 已有官网与标准仓库，但当前不抢主线。 | 保留观察，按业务机会推进。 |
-| Q2 重要不紧急 | BidScout 招投标情报 | 已有业务组织和标准仓库，待明确 MVP。 | 梳理招投标情报、线索发现和 AI Agent 边界。 |
+| Q2 重要不紧急 | BidScout 招投标情报 | 已有 requirements、deploy 和 crawler，待明确商业 MVP。 | 梳理采购公告爬取、分类、线索发现和 AI Agent 边界。 |
 | Q2 重要不紧急 | Data Intelligence 能力中心 | 支撑 RAG、BI、知识库和产业情报。 | 作为能力中心维护，不参与副业 Q1。 |
 | Q2 重要不紧急 | Automation 能力中心 | 支撑 RPA、工作流、API 集成和文档自动化。 | 作为能力中心维护。 |
 | Q2 重要不紧急 | Consulting 交付方法论 | 支撑客户诊断、售前方案和交付方法论。 | 沉淀模板和方案蓝图。 |
-| Q4 不重要不紧急 | 视频生成 | 视频工具链已成组织，但当前缺少近期交付压力。 | 暂缓，不和 Q1 项目抢时间。 |
 
 ## 本职工作 / 主业跟进
 
@@ -46,7 +48,8 @@
 
 ## 本周建议
 
-1. Q1 聚焦 Blue Parrot、高考、Debet、MCN/KOL ERPNext 四条真正影响上线/转化/架构交付的线。
-2. 主业 AI 平台、Enterprise Service、Platform、Data Intelligence、Automation、Consulting 是长期能力/主业资产，放 Q2 持续推进。
-3. 新粮、Dating、集运宝、BidScout、量化都保留视图，但本周不应抢 Q1 时间。
-4. 视频生成组织保留，当前放 Q4 暂缓。
+1. Q1 候选池为 Blue Parrot、高考、MCN/KOL ERPNext、新粮和 AI 数字人；每周仍只选择 1-2 个主攻交付物。
+2. 高考与 Video 组成首个数字人业务试点：Video 提供内容/直播能力，高考负责知识、场景、线索和咨询闭环。
+3. Debet 下调到 Q2；Digital Cabin 与 Lingsure 作为副业 Q2 纳入组合视图。
+4. AI 软件工厂由 AI Platform 主责产品，Platform 提供 Clone、Codegen 和工程底座。
+5. Dating 与同伴游合并，以“同伴游 / 教练教师陪伴 + 券系统”为项目主名。
