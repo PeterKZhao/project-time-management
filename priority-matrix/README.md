@@ -2,7 +2,7 @@
 
 > 用于每周判断先做什么。副业和本职工作仍然分开看：副业决定时间投入，本职工作只决定跟进顺序。
 
-> 2026-08-04 已按 GitHub 当前可见组织和业务决策重新校准；能力中心/平台型 BU 进入视图，但不和具体成交/上线项目抢 Q1。
+> 2026-08-05 已校正 Enterprise Service：它属于副业，不属于本职工作。副业 AI 软件工厂 / youlidao.ai 与正式工作的主业 AI 平台分开管理。
 
 ## 判断标准
 
@@ -23,8 +23,8 @@
 | Q1 重要且紧急 | 新粮 ERP+CRM+供应链 | 项目已经签约，进入范围确认、启动和交付阶段。 | 确认合同范围、里程碑、数据边界、验收标准并启动 Sprint 0。 |
 | Q1 重要且紧急 | AI 数字人 / 视频生成 | 数字人已成为跨业务视频和直播能力，并确定先服务高考业务。 | 完成首批 10 条高考短视频、1 场半自动直播及来源/留资追踪。 |
 | Q2 重要不紧急 | AI 债务健康检查管理系统 | 前台、后台、部署和 requirements 已形成闭环，但当前优先级低于 MCN/KOL。 | 保持可演示闭环和 AI 初筛能力，等待明确客户或交付窗口后再升 Q1。 |
-| Q2 重要不紧急 | AI 软件工厂 / 主业 AI 平台 | AI Platform 主责 youlidao.ai 产品、订阅和工具聚合，Platform 提供工程底座。 | 维护 requirements、platform-roadmap、knowledge-base，并明确 AI Platform 与 Platform 的接口。 |
-| Q2 重要不紧急 | Enterprise Service 客户技术赋能 | 对外客户技术赋能业务，围绕政策项目匹配、客户方案和交付资产。 | 梳理 Agent、知识库、skills、playbooks 和 project-management 的交付边界。 |
+| Q2 重要不紧急 | AI 软件工厂 / youlidao.ai | AI Platform 主责副业产品、订阅和工具聚合，Platform 提供工程底座；不与正式工作的主业 AI 平台混称。 | 维护 requirements、platform-roadmap、knowledge-base，并明确 AI Platform 与 Platform 的接口。 |
+| Q2 重要不紧急（待重排） | Enterprise Service 客户技术赋能 | 副业中的对外客户技术赋能业务，围绕政策项目匹配、客户方案和交付资产；当前客户、收入和交付窗口尚需重谈。 | 先确认首个付费客户/合作窗口、服务包和最近交付节点，再判断是否升 Q1。 |
 | Q2 重要不紧急 | Platform 底座 / Clone & Codegen | 承载 RuoYi/Yudao/ERPNext 底座和 codegen/clone 工作流。 | 作为 AI 软件工厂和各 BU 的工程支撑，保持与具体业务输出的边界。 |
 | Q2 重要不紧急 | 量化交易 | 已有 25 个仓库，其中 20 个为 upstream forks，适合长期能力积累。 | 优先维护 requirements、stock-knowledge-base、stock-research，控制新增 fork 和实现投入。 |
 | Q2 重要不紧急 | 同伴游 / 教练教师陪伴 + 券系统 | 与 Dating 合并并以同伴游为项目主名，仍处商业可行性和 MVP 规划阶段。 | 明确会员、候选人/教练教师、陪伴场景、券结算、核验和隐私 MVP。 |
@@ -42,7 +42,8 @@
 
 | 象限 | 项目 | 理由 | 下一步 |
 |---|---|---|---|
-| Q2 重要不紧急 | AI 架构设计 | 需要作为主业能力和后续 AI 平台/Agentic 工作的架构底座。 | 梳理目标架构、关键模块、集成边界、数据与权限设计。 |
+| Q2 重要不紧急 | 主业 AI 平台 | 团队已有多项为客户节省时间的 AI 工具，长期目标是集中到正式工作的对外客户包月平台。 | 只盘点主业资产，形成工具清单、客户价值、共性能力、订阅边界和平台路线图。 |
+| Q2 重要不紧急 | AI 架构设计 | 需要作为主业 AI 平台和后续 Agentic AI 工作的架构底座。 | 梳理目标架构、关键模块、集成边界、数据、权限与审计设计。 |
 | Q2 重要不紧急 | AML Agentic AI | 技术路径基本可行，当前卡在权限配置。 | 等权限配置完成后继续推进。 |
 | Q2 重要不紧急 | FE Skill Building / ADF / SnapOne / 其他工作项 | 属于主业跟进，不放入副业 Q1。 | 按 official-work/README.md 单独检查。 |
 
@@ -53,3 +54,4 @@
 3. Debet 下调到 Q2；Digital Cabin 与 Lingsure 作为副业 Q2 纳入组合视图。
 4. AI 软件工厂由 AI Platform 主责产品，Platform 提供 Clone、Codegen 和工程底座。
 5. Dating 与同伴游合并，以“同伴游 / 教练教师陪伴 + 券系统”为项目主名。
+6. Enterprise Service 留在副业 Q2；主业 AI 平台留在 official-work Q2，两者分别复盘，不相互替代。

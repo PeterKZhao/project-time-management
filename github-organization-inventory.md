@@ -1,6 +1,6 @@
 # GitHub Organization Inventory
 
-> Last checked: 2026-08-04. Source: authenticated GitHub organization pages and repository filters.
+> Last checked: 2026-08-04. Classification corrected: 2026-08-05. Source: authenticated GitHub organization pages and repository filters.
 
 | Organization | Live repos | Private repos | Forks | Core repositories |
 |---|---:|---:|---:|---|

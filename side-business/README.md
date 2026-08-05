@@ -2,9 +2,13 @@
 
 用于管理 赵凯 的副业、创业、业务单元和个人项目组合。
 
-> 2026-08-04 已按当前 GitHub 可见组织重新检索；这里只保留 live organization/repo，不记录已删除项。
+> 2026-08-05 已校正业务归属；这里只保留 live organization/repo，不记录已删除项。
 
 > AI 软件工厂 / youlidao.ai 由 `Business-Unit-for-AI-Platform` 主责产品和业务，`Business-Unit-for-Platform` 提供 Clone、Codegen 与工程底座。
+
+> Enterprise Service 是副业中的对外客户技术赋能业务。它不是正式工作中的主业项目，也不是内部共享服务中心。
+
+> Enterprise Service 的会议背景、合作模式、数据边界和待确认事项见 [Enterprise Service 副业项目跟进](enterprise-service.md)。
 
 ## 项目列表
 
@@ -16,8 +20,8 @@
 | 新粮 ERP+CRM+供应链 | Q1 重要且紧急 | 赵凯、赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Xinliang](https://github.com/Business-Unit-for-Xinliang) | 7 live repos：`requirements`、`deploy`、`XinliangSCM`、`knowledge-base`、`agent-profiles` 等。项目已经签约，进入范围确认、里程碑和交付启动阶段。 |
 | AI 数字人 / 视频生成 | Q1 重要且紧急 | 赵凯、赵杨 | AI 视频与直播工具链 | API 聚合 / 自动化脚本 | [Business-Unit-for-Video](https://github.com/Business-Unit-for-Video) | 10 live repos：`requirements`、`deploy`、`Video2Text`、`Text-Image2Video`、`video-solution`、`VideoConvt2English`、`authorized-media-publisher` 等。升级为跨业务 Q1 能力，先服务高考短视频和半自动直播。 |
 | AI 债务健康检查管理系统 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Debet](https://github.com/Business-Unit-for-Debet) | 7 live repos：`requirements`、`deploy`、`debet-admin-backend`、`debet-customer-portal-vben`、`debet-deploy`、`frontend-selection`。保留产品闭环和 AI 初筛能力，当前优先级低于 MCN/KOL。 |
-| AI 软件工厂 / 主业 AI 平台 | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-AI-Platform](https://github.com/Business-Unit-for-AI-Platform) | 10 live repos：`requirements`、`deploy`、`knowledge-base`、`platform-roadmap`、`sub2api`。AI Platform 主责 youlidao.ai 的产品、订阅和工具聚合，Platform 提供工程底座。 |
-| Enterprise Service 客户技术赋能 | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-Enterprise-Service](https://github.com/Business-Unit-for-Enterprise-Service) | 9 live repos：`requirements`、`customer-solutions`、`enterprise-service-portal-vben`、政策匹配 Agent/知识库/skills、`service-playbooks`、`project-management`。 |
+| AI 软件工厂 / youlidao.ai | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-AI-Platform](https://github.com/Business-Unit-for-AI-Platform) | 10 live repos：`requirements`、`deploy`、`knowledge-base`、`platform-roadmap`、`sub2api`。AI Platform 主责副业产品 youlidao.ai 的订阅和工具聚合，Platform 提供工程底座；不与正式工作的主业 AI 平台混称。 |
+| Enterprise Service 客户技术赋能 | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按客户场景定 | AI / 数据 / 自动化 / 系统交付 | [Business-Unit-for-Enterprise-Service](https://github.com/Business-Unit-for-Enterprise-Service) | 9 live repos：`requirements`、`customer-solutions`、`enterprise-service-portal-vben`、政策匹配 Agent/知识库/skills、`service-playbooks`、`project-management`。这是副业中的对外客户业务，不放入 official-work。 |
 | Platform 底座 / Clone & Codegen | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-Platform](https://github.com/Business-Unit-for-Platform) | 13 live repos：`requirements`、Clone Bots、`codegen-bot` 和 future 平台底座。作为 AI 软件工厂及各 BU 的工程支撑，不单独抢业务 Q1。 |
 | 量化交易 | Q2 重要不紧急 | 赵凯、赵杨 | Gin-Vue-Admin / Vue | Gin / Go / Python Quant | [Business-Unit-for-Stock](https://github.com/Business-Unit-for-Stock) | 25 live repos，其中 20 个 forks；核心自有资产为 `requirements`、`deploy`、`stock-knowledge-base`、`stock-research`。控制投入节奏，避免把上游仓库数量当成项目进度。 |
 | 同伴游 / 教练教师陪伴 + 券系统 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / UniApp / H5 | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Dating](https://github.com/Business-Unit-for-Dating) | 3 live repos：`requirements`、`deploy`、`.github`。与 Dating 合并，以“同伴游”为项目名称，先明确会员、候选人/教练教师、陪伴场景、券结算、核验和隐私 MVP。 |
@@ -40,7 +44,7 @@
 | [Business-Unit-for-Debet](https://github.com/Business-Unit-for-Debet) | 7 | 具体业务单元 | `requirements`、`deploy`、`debet-admin-backend`、`debet-customer-portal-vben`、`debet-deploy`、`frontend-selection` |
 | [Business-Unit-for-Digital-Cabin](https://github.com/Business-Unit-for-Digital-Cabin) | 7 | 具体业务单元 / 副业 | `requirements`、`digital-cabin-review-prototype`、`objectvision-digital-cabin-platform`、`knowledge-base`、`agent-profiles`、`deploy` |
 | [Business-Unit-for-Lingsure](https://github.com/Business-Unit-for-Lingsure) | 5 | 具体业务单元 | `requirements`、`deploy`、`future-lingsure-uniapp`、`lingsure-deploy` |
-| [Business-Unit-for-Enterprise-Service](https://github.com/Business-Unit-for-Enterprise-Service) | 9 | 能力/平台业务单元 | `requirements`、`customer-solutions`、`enterprise-service-portal-vben`、`policy-project-matching-agent`、`policy-project-matching-knowledge-base`、`policy-project-matching-skills`、`service-playbooks`、`project-management` |
+| [Business-Unit-for-Enterprise-Service](https://github.com/Business-Unit-for-Enterprise-Service) | 9 | 具体业务单元 / 副业 / 对外客户技术赋能 | `requirements`、`customer-solutions`、`enterprise-service-portal-vben`、`policy-project-matching-agent`、`policy-project-matching-knowledge-base`、`policy-project-matching-skills`、`service-playbooks`、`project-management` |
 | [Business-Unit-for-AI-Platform](https://github.com/Business-Unit-for-AI-Platform) | 10 | 能力/平台业务单元 | `requirements`、`deploy`、`knowledge-base`、`platform-roadmap`、`sub2api` |
 | [Business-Unit-for-Platform](https://github.com/Business-Unit-for-Platform) | 13 | 能力/平台业务单元 | `requirements`、`Clone-ruoyi-ui-admin-vue3-Bot`、`Clone-ruoyi-vue-pro-Bot`、`Clone-yudao-mall-uniapp-Bot`、`codegen-bot`、`future-mall-uniapp`、`future-ui-admin-vue3`、`future-vue-pro` |
 | [Business-Unit-for-Data-Intelligence](https://github.com/Business-Unit-for-Data-Intelligence) | 3 | 能力/平台业务单元 | `requirements`、`deploy` |
@@ -58,3 +62,4 @@
 2. 阻塞项目只记录解除阻塞的下一步。
 3. 每个进行中项目保留一个明确的下一步交付物。
 4. 能力中心/平台型 BU 进入同一视图，但不和具体成交/上线项目抢 Q1。
+5. Enterprise Service 按副业参与本组合排序；正式工作的主业 AI 平台只在 official-work 单独跟进。
