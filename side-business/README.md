@@ -14,15 +14,15 @@
 
 | 项目 | 象限/阶段 | 当前责任人 | 前端框架 | 后端框架 | GitHub Organization | 当前仓库概况 / 备注 |
 |---|---|---|---|---|---|---|
-| Blue Parrot 在线教育 | Q1 重要且紧急 | 赵凯、赵杨 | 学生/导师 App | Backend Service | [Business-Unit-for-Blue-Parrot](https://github.com/Business-Unit-for-Blue-Parrot) | 4 live repos：`requirements`、`bp-backend-service`、`bp-student-app`、`bp-tutor-app`。已独立成 BU；当前重点是解除 App、支付和测试阻塞。 |
-| 高考志愿填报 | Q1 重要且紧急 | 赵凯、赵杨 | Vue / UniApp / H5 | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Gaokao](https://github.com/Business-Unit-for-Gaokao) | 31 live repos：`requirements`、`deploy`、`gaokao-knowledge-base`、`future-deploy` 和代表爬虫/数据资产。继续围绕直播、内容、线索承接和咨询闭环推进。 |
-| MCN/KOL ERPNext 架构 | Q1 重要且紧急 | 赵凯、赵杨 | ERPNext/Frappe Desk | ERPNext / Frappe | [Business-Unit-for-MCN-KOL](https://github.com/Business-Unit-for-MCN-KOL) | 5 live repos：`requirements`、`deploy`、`AgentProfiles`、`mcn-kol-finance`。支付编排并入本项目，以 MCN/KOL ERPNext 为项目主线。 |
-| 新粮 ERP+CRM+供应链 | Q1 重要且紧急 | 赵凯、赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Xinliang](https://github.com/Business-Unit-for-Xinliang) | 7 live repos：`requirements`、`deploy`、`XinliangSCM`、`knowledge-base`、`agent-profiles` 等。项目已经签约，进入范围确认、里程碑和交付启动阶段。 |
-| AI 数字人 / 视频生成 | Q1 重要且紧急 | 赵凯、赵杨 | AI 视频与直播工具链 | API 聚合 / 自动化脚本 | [Business-Unit-for-Video](https://github.com/Business-Unit-for-Video) | 10 live repos：`requirements`、`deploy`、`Video2Text`、`Text-Image2Video`、`video-solution`、`VideoConvt2English`、`authorized-media-publisher` 等。升级为跨业务 Q1 能力，先服务高考短视频和半自动直播。 |
+| Blue Parrot 在线教育 | Q1 重要且紧急 | 赵凯、赵杨、新加坡支持人员 | 学生/导师 App | Backend Service | [Business-Unit-for-Blue-Parrot](https://github.com/Business-Unit-for-Blue-Parrot) | 4 live repos：`requirements`、`bp-backend-service`、`bp-student-app`、`bp-tutor-app`。新加坡已愿意安排 1-2 人协助上线和测试；当前任务是明确人员、测试范围、缺陷分流和上线验收。 |
+| 高考志愿填报 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / UniApp / H5 | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Gaokao](https://github.com/Business-Unit-for-Gaokao) | 31 live repos：`requirements`、`deploy`、`gaokao-knowledge-base`、`future-deploy` 和代表爬虫/数据资产。优先级已下调；保留直播、内容、线索与咨询闭环资产，等待下一明确业务窗口。 |
+| MCN/KOL ERPNext 架构 | Q1 重要且紧急 | 赵凯、赵杨 | ERPNext/Frappe Desk | ERPNext / Frappe | [Business-Unit-for-MCN-KOL](https://github.com/Business-Unit-for-MCN-KOL) | 5 live repos：`requirements`、`deploy`、`AgentProfiles`、`mcn-kol-finance`。支付编排并入本项目；当前需尽快完成测试，并根据测试结论进入下一轮开发。 |
+| 新粮 ERP+CRM+供应链 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Xinliang](https://github.com/Business-Unit-for-Xinliang) | 7 live repos：`requirements`、`deploy`、`XinliangSCM`、`knowledge-base`、`agent-profiles` 等。合同尚未签署；签约前不进入交付启动，先跟进合同状态、范围、里程碑和验收边界。 |
+| AI 数字人 / 视频生成 | Q2 重要不紧急（受阻） | 赵凯、赵杨 | AI 视频与直播工具链 | API 聚合 / 自动化脚本 | [Business-Unit-for-Video](https://github.com/Business-Unit-for-Video) | 10 live repos：`requirements`、`deploy`、`Video2Text`、`Text-Image2Video`、`video-solution`、`VideoConvt2English`、`authorized-media-publisher` 等。当前受 Image Token 缺口阻塞；先明确 Token 获取、预算、授权和替代方案后再安排内容/直播交付。 |
 | AI 债务健康检查管理系统 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / Vben Admin | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Debet](https://github.com/Business-Unit-for-Debet) | 7 live repos：`requirements`、`deploy`、`debet-admin-backend`、`debet-customer-portal-vben`、`debet-deploy`、`frontend-selection`。保留产品闭环和 AI 初筛能力，当前优先级低于 MCN/KOL。 |
 | AI 软件工厂 / youlidao.ai | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-AI-Platform](https://github.com/Business-Unit-for-AI-Platform) | 10 live repos：`requirements`、`deploy`、`knowledge-base`、`platform-roadmap`、`sub2api`。AI Platform 主责副业产品 youlidao.ai 的订阅和工具聚合，Platform 提供工程底座；不与正式工作的主业 AI 平台混称。 |
 | Enterprise Service 客户技术赋能 | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按客户场景定 | AI / 数据 / 自动化 / 系统交付 | [Business-Unit-for-Enterprise-Service](https://github.com/Business-Unit-for-Enterprise-Service) | 9 live repos：`requirements`、`customer-solutions`、`enterprise-service-portal-vben`、政策匹配 Agent/知识库/skills、`service-playbooks`、`project-management`。这是副业中的对外客户业务，不放入 official-work。 |
-| Platform 底座 / Clone & Codegen | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | 按业务场景定 | 平台/AI/自动化能力 | [Business-Unit-for-Platform](https://github.com/Business-Unit-for-Platform) | 13 live repos：`requirements`、Clone Bots、`codegen-bot` 和 future 平台底座。作为 AI 软件工厂及各 BU 的工程支撑，不单独抢业务 Q1。 |
+| Platform / Yudao 能力固化 | Q2 重要不紧急 | 赵凯 / 相关业务负责人 | Yudao Admin / Vue | Yudao / Spring Boot | [Business-Unit-for-Platform](https://github.com/Business-Unit-for-Platform) | 13 live repos：`requirements`、Clone Bots、`codegen-bot` 和 future 平台底座。当前重点是固化 Yudao 的业务后台、代码生成、克隆重构和可复用交付能力；不单独抢具体业务 Q1。 |
 | 量化交易 | Q2 重要不紧急 | 赵凯、赵杨 | Gin-Vue-Admin / Vue | Gin / Go / Python Quant | [Business-Unit-for-Stock](https://github.com/Business-Unit-for-Stock) | 25 live repos，其中 20 个 forks；核心自有资产为 `requirements`、`deploy`、`stock-knowledge-base`、`stock-research`。控制投入节奏，避免把上游仓库数量当成项目进度。 |
 | 同伴游 / 教练教师陪伴 + 券系统 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / UniApp / H5 | RuoYi-Vue-Pro / Spring Boot | [Business-Unit-for-Dating](https://github.com/Business-Unit-for-Dating) | 3 live repos：`requirements`、`deploy`、`.github`。与 Dating 合并，以“同伴游”为项目名称，先明确会员、候选人/教练教师、陪伴场景、券结算、核验和隐私 MVP。 |
 | Digital Cabin 数字方舱 | Q2 重要不紧急 | 赵凯、赵杨 | Vue / TDesign / DataV | RuoYi / Java | [Business-Unit-for-Digital-Cabin](https://github.com/Business-Unit-for-Digital-Cabin) | 7 private repos：`requirements`、`digital-cabin-review-prototype`、`objectvision-digital-cabin-platform`、`knowledge-base`、`agent-profiles`、`deploy` 等。作为副业纳入组合，待确认客户窗口和交付节点。 |
@@ -61,5 +61,5 @@
 1. 只选 1-2 个本周主攻项目。
 2. 阻塞项目只记录解除阻塞的下一步。
 3. 每个进行中项目保留一个明确的下一步交付物。
-4. 能力中心/平台型 BU 进入同一视图，但不和具体成交/上线项目抢 Q1。
+4. Platform 当前优先固化 Yudao 能力；能力中心/平台型 BU 不和具体成交/上线项目抢 Q1。
 5. Enterprise Service 按副业参与本组合排序；正式工作的主业 AI 平台只在 official-work 单独跟进。
