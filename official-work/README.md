@@ -18,9 +18,11 @@
 
 ## 本周重整顺序
 
-1. 先与主业团队确认：主业 AI 平台、AI 架构设计、AML Agentic AI 的本周决策与阻塞解除路径。
-2. 再确认已有业务交付项：Partial Withdrawal、Revise Benefit Amount、Non-Medical Claim 的业务需求、验收和依赖。
-3. 最后确认工程能力和产品工作项：FE Skill Building、ADF、SnapOne AI、SnapOne UI 设计与 DMTM STU BO 的 owner、节奏和下一次检查点。
+1. **先完成 AML Agentic AI 上 PROD 的前置闭环**：向 Kim、Chee 获取所需文档模板，并与 Khuan 确认共享文件夹；明确流程 owner、缺失材料及下一步提交动作。
+2. **再锁定主业 AI 平台下周 UAT 的范围与责任**：由 Dennis 确认本轮 UAT 的工具/功能清单、目标用户、验收口径、环境与参与人员；将本轮上线 UAT 与长期产品化路线图分开管理。
+3. **随后推进 OCP 解决方案材料**：继续整理材料，并确认本周需形成的方案版本、评审对象和提交节点。
+4. **最后启动 FE Skill Building 的首轮扫描**：确定代码库范围和输出模板，产出按影响排序的问题清单及后续 owner 建议。
+5. **ADF 保持暂停跟进，不占用主攻投入**：仅确认账号申请责任人、审批路径、最新状态和替代方案；在解除暂停前不排入交付承诺。
 
 ## 跟进规则
 
